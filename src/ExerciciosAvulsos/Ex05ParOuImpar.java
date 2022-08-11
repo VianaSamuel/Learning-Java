@@ -17,5 +17,7 @@ public class Ex05ParOuImpar {
 		else {
 			System.out.println("O número é ímpar.");
 		}
+
+		input.close();
     }
 }
