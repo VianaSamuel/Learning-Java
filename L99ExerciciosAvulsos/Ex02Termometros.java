@@ -1,4 +1,4 @@
-package ExerciciosAvulsos;
+package L99ExerciciosAvulsos;
 import java.util.Scanner;
 
 public class Ex02Termometros {

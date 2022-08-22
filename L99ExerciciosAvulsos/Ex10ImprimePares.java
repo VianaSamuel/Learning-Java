@@ -1,4 +1,4 @@
-package ExerciciosAvulsos;
+package L99ExerciciosAvulsos;
 
 public class Ex10ImprimePares {
     public static void main(String[] args) {

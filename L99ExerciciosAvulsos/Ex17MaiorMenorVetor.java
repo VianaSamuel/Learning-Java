@@ -1,6 +1,6 @@
-package ExerciciosAvulsos;
+package L99ExerciciosAvulsos;
 
-public class Ex18MaiorMenorVetor {
+public class Ex17MaiorMenorVetor {
     public static void main(String[] args) {
         int[] array = {5, 2, 7, 22, 154, 202, 1, 8, 4, 66};
         System.out.println("Vetor: {5, 2, 7, 22, 154, 202, 1, 8, 4, 66}");

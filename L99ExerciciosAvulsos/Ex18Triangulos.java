@@ -1,7 +1,7 @@
-package ExerciciosAvulsos;
+package L99ExerciciosAvulsos;
 import java.util.Scanner;
 
-public class Ex19Triangulos {
+public class Ex18Triangulos {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         double a = 0.0 , b = 0.0, c = 0.0;

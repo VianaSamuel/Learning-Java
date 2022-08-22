@@ -1,4 +1,4 @@
-package A01IntroducaoPesquisa;
+package L01IntroducaoPesquisa;
 import java.util.Scanner;
 
 public class Ex02PesquisaBinaria {
