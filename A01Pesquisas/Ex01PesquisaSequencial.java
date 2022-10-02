@@ -1,4 +1,4 @@
-package L01IntroducaoPesquisa;
+package A01Pesquisas;
 import java.util.Scanner;
 
 public class Ex01PesquisaSequencial {

@@ -1,4 +1,4 @@
-package L99ExerciciosAvulsos;
+package A99Avulsos;
 
 import java.util.Random;
 import java.util.Scanner;

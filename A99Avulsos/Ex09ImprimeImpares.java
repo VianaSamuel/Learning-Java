@@ -1,4 +1,4 @@
-package L99ExerciciosAvulsos;
+package A99Avulsos;
 
 public class Ex09ImprimeImpares {
     public static void main(String[] args) {
