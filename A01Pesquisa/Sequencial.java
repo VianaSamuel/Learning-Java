@@ -1,7 +1,7 @@
-package A01Pesquisas;
+package A01Pesquisa;
 import java.util.Scanner;
 
-public class Ex01PesquisaSequencial {
+public class Sequencial {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] array = {5, 2, 7, 22, 154, 202, 1, 8, 4, 66};

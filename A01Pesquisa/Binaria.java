@@ -1,7 +1,7 @@
-package A01Pesquisas;
+package A01Pesquisa;
 import java.util.Scanner;
 
-public class Ex02PesquisaBinaria {
+public class Binaria {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] array = {1, 5, 8, 81, 151, 200, 561, 814, 999};
