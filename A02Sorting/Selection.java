@@ -24,20 +24,21 @@ public class Selection {
 
         //=====SELECTION SORT=====
             // variáveis auxiliares
-            int min_idx, aux;
+            int min_idx;
 
             // controlador
             for (int i = 0; i < array.length-1; i++){
-                // define esquerda como mínimo
+                // define a esquerda do vetor como o menor elemento
                 min_idx = i;
 
                 // comparador
                 for (int j = i+1; j < array.length; j++){
+                    // se o elemento j for menor do que o menor elemento, realiza a troca
                     if (array[j] < array[min_idx]) min_idx = j;
                 }
 
-                // função swap (troca a esquerda com o novo menor número)
-                aux = array[i];
+                // função swap
+                int aux = array[i];
                 array[i] = array[min_idx];
                 array[min_idx] = aux;
             }

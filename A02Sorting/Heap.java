@@ -73,8 +73,9 @@ public class Heap {
         // se nó direito é maior do que a raíz, então os troca
         if ((right < n) && (array[right] > array[root])) root = right;
 
-        // se houve trocas, então realiza swap e chama método recursivo 
+        // se houve trocas, então realiza o swap e chama o método recursivo 
         if (root != i){
+            // função swap
             int aux = array[root];
             array[root] = array[i];
             array[i] = aux;

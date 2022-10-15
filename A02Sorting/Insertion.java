@@ -24,17 +24,17 @@ public class Insertion {
 
         //=====INSERTION SORT=====
             // variáveis auxiliares
-            int aux, j;
+            int j;
 
             // controlador
             for (int i = 1; i < array.length; i++){
                 // define j como elemento à esquerda do controlador
                 j = i-1;
 
-                // comparador
+                // comparador (roda SE e ENQUANTO achar um elemento menor à direita)
                 while((j >= 0) && (array[j] > array[j+1])){
-                    // função swap (reordena parte esquerda)
-                    aux = array[j];
+                    // função swap (reordena a parte à esquerda do comparador)
+                    int aux = array[j];
                     array[j] = array[j+1];
                     array[j+1] = aux;
                     j--;
