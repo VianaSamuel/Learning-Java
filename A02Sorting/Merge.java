@@ -1,3 +1,4 @@
+package A02Sorting;
 import java.util.Random;
 
 public class Merge {
