@@ -3,24 +3,26 @@ import java.util.Random;
 
 public class Insertion {
     public static void main(String[] args) {     
-        System.out.println("\n#----------------#");
+        System.out.println("\n#================#");
         System.out.println("| INSERTION SORT |");
-        System.out.println("#----------------#");
+        System.out.println("#================#\n");
         
         // criação do array   
         int[] array = new int[10];
     
-        // preenchimento do array com números aleatórios de 1 a 100
+        // preenchimento do array com números aleatórios de 10 a 99
         for (int i = 0; i < array.length; i++){
-            array[i] = (int) (new Random().nextInt(100) + 1);
+            array[i] = (int) (new Random().nextInt(90) + 10);
         }
 
-        // imprime vetor desordenado
+        // imprime o vetor desordenado
         System.out.println("Vetor desordenado:");
+        System.out.println("*-------------------------------------------------*");
         for (int i = 0; i < array.length; i++){
             System.out.print("| " + array[i] + " ");
         }
-        System.out.println("|\n");
+        System.out.println("|");
+        System.out.println("*-------------------------------------------------*\n");
 
         //=====INSERTION SORT=====
             // variáveis auxiliares
@@ -42,14 +44,13 @@ public class Insertion {
             }
         //=====INSERTION SORT=====
 
-        // imprime vetor ordenado
-        System.out.println("#---------------------------#");
-        System.out.println("| INSERTION SORT REALIZADO! |");
-        System.out.println("#---------------------------#");
-        System.out.println("Vetor ordenado:");
+        // imprime o vetor ordenado
+        System.out.println("Vetor ordenado após o sort:");
+        System.out.println("*-------------------------------------------------*");
         for (int i = 0; i < array.length; i++){
             System.out.print("| " + array[i] + " ");
         }
-        System.out.println("|\n");
+        System.out.println("|");
+        System.out.println("*-------------------------------------------------*\n");
     }
 }
