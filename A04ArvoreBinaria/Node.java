@@ -1,18 +1,17 @@
-package A03ArvoreBinaria;
+package A04ArvoreBinaria;
 
 class Node{
     // cria elemento e laterais
     int value;
-    Node left;
-    Node right;
+    Node left, right;
 
-    // se recebe APENAS valor, inicializa laterais como NULAS
+    // CONSTRUTOR: se recebe APENAS valor, inicializa laterais como NULAS
     Node(int value){
         this.value = value;
         this.left = null;
         this.right = null;
     }
-    // se recebe valor E laterais, inicializa laterais recebidas
+    // CONSTRUTOR: se recebe valor E laterais, inicializa laterais recebidas
     Node (int value, Node left, Node right){
         this.value = value;
         this.left = left;

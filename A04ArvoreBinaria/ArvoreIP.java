@@ -1,4 +1,4 @@
-package A03ArvoreBinaria;
+package A04ArvoreBinaria;
 
 // INSERÇÃO POR PASSAGEM DE PAI
 public class ArvoreIP {

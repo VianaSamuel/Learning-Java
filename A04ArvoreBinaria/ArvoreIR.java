@@ -1,4 +1,4 @@
-package A03ArvoreBinaria;
+package A04ArvoreBinaria;
 import java.util.Random;
 
 // INSERÇÃO POR REFERÊNCIA
