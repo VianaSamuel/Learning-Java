@@ -8,7 +8,7 @@ public class Lista {
     private ZNode first, last;
     private int size;
 
-    // inicializa o tamanho, cabeça e último nó como 0
+    // inicializa o tamanho, cabeca e último nó como 0
     public Lista(){
         size = 0;
         first = last = new ZNode(0);
@@ -37,12 +37,12 @@ public class Lista {
 
     //=====MÉTODOS=====//
         public void add(int x, int pos){
-            // se a posição for 0, convoca o método de adicionar no INÍCIO
+            // se a posicao for 0, convoca o método de adicionar no INÍCIO
             if (pos == 0) addStart(x);
-            // se a posição for (tamanho + 1), convoca o método de adicionar no FIM
+            // se a posicao for (tamanho + 1), convoca o método de adicionar no FIM
             else if (pos == size) addEnd(x);
 
-            // para outras posições
+            // para outras posicoes
             else {
                 // inicializa o percurso
                 ZNode previous = first;
@@ -112,7 +112,7 @@ public class Lista {
                 ZNode searched = previous.getNext();
                 removed = searched.getValue();
 
-                // REAPONTA o espaço a ser removido como o PRÓXIMO do BUSCADO
+                // REAPONTA o espaco a ser removido como o PRÓXIMO do BUSCADO
                 previous.setNext(searched.getNext());
 
                 // APAGA o 
@@ -168,7 +168,7 @@ public class Lista {
             // inicializa o percurso
             ZNode current = first.getNext();
 
-            // enquanto o próximo nó não estiver vazio, percorre
+            // enquanto o próximo nó nao estiver vazio, percorre
             for (int i = 0; i < pos; i++){
                 if (current.getNext() != null){
                     current = current.getNext();
@@ -189,7 +189,7 @@ public class Lista {
         }
 
         public boolean isEmpty(){
-            // se o NÓ CABEÇA for igual o ÚLTIMO NÓ (nulo/vazio), então a estrutura está VAZIA
+            // se o NÓ CABEÇA for igual o ÚLTIMO NÓ (nulo/vazio), entao a estrutura está VAZIA
             if (first == last) return true;
             else return false;
         }

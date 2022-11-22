@@ -32,7 +32,7 @@ public class Ex21ContasString {
 
         System.out.println("Quantidade de caracteres: " + palavra.length());
         System.out.println("Quantidade de letras: " + let);
-        System.out.println("Quantidade de não-letras: " + nlet);
+        System.out.println("Quantidade de nao-letras: " + nlet);
         System.out.println("Quantidade de vogais: " + vog);
         System.out.println("Quantidade de consoantes: " + con);
 

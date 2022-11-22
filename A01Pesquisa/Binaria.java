@@ -12,7 +12,7 @@ public class Binaria {
         // inicializa o scanner
         Scanner input = new Scanner(System.in);
         
-        // criação do array
+        // criacao do array
         int[] array = new int[10];
         
         // preenchimento do array com números aleatórios de 10 a 99
@@ -49,7 +49,7 @@ public class Binaria {
         int esq = 0;
         int meio;
 
-        // enquanto os extremos não se atravessam
+        // enquanto os extremos nao se atravessam
         while (esq <= dir){
             // define o meio
             meio = (esq + dir) / 2;
@@ -73,12 +73,12 @@ public class Binaria {
         // imprime o resultado
         if (!result) {
             System.out.println("\n*-----------------------*");
-            System.out.println("| Valor não encontrado. |");
+            System.out.println("| Valor nao encontrado. |");
             System.out.println("*-----------------------*\n");
         } else {
             System.out.println("\n*-----------------------*");
             System.out.println("| Valor encontrado!     |");
-            System.out.println("| Posição no vetor: " + posicao + "   |");
+            System.out.println("| Posicao no vetor: " + posicao + "   |");
             System.out.println("*-----------------------*\n");
         }
     }

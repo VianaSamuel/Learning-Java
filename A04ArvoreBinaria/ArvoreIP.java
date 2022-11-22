@@ -1,3 +1,7 @@
+//=============================//
+//INSERIR POR PASSAGEM (de pai)//
+//=============================//
+
 package A04ArvoreBinaria;
 
 // INSERÇÃO POR PASSAGEM DE PAI

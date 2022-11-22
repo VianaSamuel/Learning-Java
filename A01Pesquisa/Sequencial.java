@@ -11,7 +11,7 @@ public class Sequencial {
         // inicializa o scanner
         Scanner input = new Scanner(System.in);
         
-        // criação do array   
+        // criacao do array   
         int[] array = new int[10];
         
         // preenchimento do array com números aleatórios de 10 a 99
@@ -42,7 +42,7 @@ public class Sequencial {
         int i = 0;
         boolean result = false;
 
-        // percorre o array enquanto o número não for achado e o percurso não ter sido finalizado
+        // percorre o array enquanto o número nao for achado e o percurso nao ter sido finalizado
         while (!result && i < array.length) {
             if (array[i] == x) {
                 result = true;
@@ -54,12 +54,12 @@ public class Sequencial {
         // imprime o resultado
         if (!result) {
             System.out.println("\n*-----------------------*");
-            System.out.println("| Valor não encontrado. |");
+            System.out.println("| Valor nao encontrado. |");
             System.out.println("*-----------------------*\n");
         } else {
             System.out.println("\n*-----------------------*");
             System.out.println("| Valor encontrado!     |");
-            System.out.println("| Posição no vetor: " + i + "   |");
+            System.out.println("| Posicao no vetor: " + i + "   |");
             System.out.println("*-----------------------*\n");
         }
     }

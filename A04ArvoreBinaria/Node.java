@@ -12,7 +12,7 @@ class Node{
         this.right = null;
     }
     // CONSTRUTOR: se recebe valor E laterais, inicializa laterais recebidas
-    Node (int value, Node left, Node right){
+    Node(int value, Node left, Node right){
         this.value = value;
         this.left = left;
         this.right = right;

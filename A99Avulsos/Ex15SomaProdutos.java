@@ -8,7 +8,7 @@ public class Ex15SomaProdutos {
 			System.out.printf("Informe a quantidade de produtos: ");
 			int produtos = input.nextInt();
 			float soma = 0;
-			float preço = 0;
+			float preco = 0;
 			int i = 2;
 			
 			if (produtos < 2) {
@@ -18,13 +18,13 @@ public class Ex15SomaProdutos {
 				System.out.println();
 					
 			    for (i = 1; i <= produtos; i++) {
-			    	System.out.printf("Digite o preço do produto " + i + ": ");
-			    	preço = input.nextFloat();
-			    	soma += preço;
+			    	System.out.printf("Digite o preco do produto " + i + ": ");
+			    	preco = input.nextFloat();
+			    	soma += preco;
 			    }
 
 			    System.out.println();
-			    System.out.println("A soma do preço dos produtos é de " + soma + ".");
+			    System.out.println("A soma do preco dos produtos é de " + soma + ".");
 			}
 				
 			input.close();

@@ -11,7 +11,7 @@ public class Ex07AprovadoOuReprovado {
 		if (nota >= 7) {
 			System.out.println("Você foi aprovado.");
 		} else if (nota >= 5 && nota < 7) {
-			System.out.println("Você foi reprovado, porém tem direito a fazer a recuperação.");
+			System.out.println("Você foi reprovado, porém tem direito a fazer a recuperacao.");
 		} else {
 			System.out.println("Você foi reprovado.");
 		}

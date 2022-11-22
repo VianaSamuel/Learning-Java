@@ -1,3 +1,7 @@
+//======================//
+//INSERIR POR REFERÊNCIA//
+//======================//
+
 package A04ArvoreBinaria;
 import java.util.Random;
 
@@ -73,12 +77,19 @@ public class ArvoreIR {
     public static void main(String[] args) {
         ArvoreIR tree = new ArvoreIR();
 
-        Random random = new Random();
+        // Random random = new Random();
         
-        for (int i = 0; i < 12; i++){
-            tree.insert(random.nextInt(89) + 10);
-        }
+        // for (int i = 0; i < 12; i++){
+        //     tree.insert(random.nextInt(89) + 10);
+        // }
 
-        tree.printTree();
+        tree.insert(5);
+        tree.insert(3);
+        tree.insert(7);
+        tree.insert(4);
+        tree.insert(6);
+
+        String s = tree.printSorted();
+        System.out.println(s);
     }
 }
