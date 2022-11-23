@@ -15,12 +15,12 @@ public class Binaria {
         // criacao do array
         int[] array = new int[10];
         
-        // preenchimento do array com números aleatórios de 10 a 99
+        // preenchimento do array com números aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
 
-        // ordena o vetor (necessário para a pesquisa binária)
+        // ordena o vetor (necessario para a pesquisa binaria)
         Arrays.sort(array);
 
         // imprime o vetor
@@ -42,7 +42,7 @@ public class Binaria {
     }
 
     public static void binarySearch(int[] array, int x) {
-        // variáveis auxiliares
+        // variaveis auxiliares
         boolean result = false;
         int posicao = 0;
         int dir = array.length - 1;

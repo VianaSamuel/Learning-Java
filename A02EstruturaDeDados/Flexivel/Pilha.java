@@ -1,7 +1,7 @@
 package A02EstruturaDeDados.Flexivel;
 
 public class Pilha {
-    // cria o nó-topo
+    // cria o node-topo
     private ZNode top;
     private int size;
     
@@ -57,7 +57,7 @@ public class Pilha {
                 current = current.getNext();
             }
 
-            // retorna o último nó
+            // retorna o último node
             return current;
         }
 

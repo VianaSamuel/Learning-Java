@@ -1,21 +1,13 @@
-//======================//
-//INSERIR POR REFERÊNCIA//
-//======================//
+//=======================//
+//INSERÇÃO POR REFERÊNCIA//
+//=======================//
 
 package A04ArvoreBinaria;
 import java.util.Random;
 
-// INSERÇÃO POR REFERÊNCIA
-public class ArvoreIR {
-    // cria o nó raíz
-    Node root;
+public class ArvoreIR extends Arvore{
     
-    // quando a árvore for criada, inicializa a raíz como nula
-    public ArvoreIR(){
-        this.root = null;
-    }
-
-    //=====INSERIR POR REFERÊNCIA=====
+    //=====INSERÇÃO POR REFERÊNCIA=====
         // inicializa o percurso da árvore utilizando a raíz
         public void insert(int value){
             root = insert(value, root);
@@ -23,7 +15,7 @@ public class ArvoreIR {
 
         // percorre toda a árvore, adiciona a última folha, e depois volta toda a árvore
         public Node insert(int value, Node parent){
-            // se nó estiver vazio, adiciona a folha
+            // se node estiver vazio, adiciona a folha
             if (parent == null){
                 parent = new Node(value);
             }
@@ -40,56 +32,17 @@ public class ArvoreIR {
             // retorna o pai
             return parent;
         }
-    //=====INSERIR POR REFERÊNCIA=====
-
-    // imprime árvore
-    public String printSorted(){
-        return "[" + printSorted(root) + "]";
-    }
-    private String printSorted(Node node){
-        String temp = "";
-
-        if (node == null) return "";
-
-        temp += printSorted(node.left);
-        temp += " " + node.value + " ";
-        temp += printSorted(node.right);
-
-        return temp;
-    }
-
-    public void printTree(){
-        printTree(root, 0);
-    }
-    private void printTree(Node node, int height){
-        if (node == null) return;
-        
-        System.out.print("├");
-        for (int i = 0; i < height; i++){
-            System.out.print("*─");
-        }
-        System.out.println(node.value);
-        
-        printTree(node.right, height+1);
-        printTree(node.left, height+1);
-    }
+    //=====INSERÇÃO POR REFERÊNCIA=====
 
     public static void main(String[] args) {
+        Random random = new Random();
         ArvoreIR tree = new ArvoreIR();
-
-        // Random random = new Random();
         
-        // for (int i = 0; i < 12; i++){
-        //     tree.insert(random.nextInt(89) + 10);
-        // }
+        for (int i = 0; i < 12; i++){
+            tree.insert(random.nextInt(89) + 10);
+        }
 
-        tree.insert(5);
-        tree.insert(3);
-        tree.insert(7);
-        tree.insert(4);
-        tree.insert(6);
-
-        String s = tree.printSorted();
-        System.out.println(s);
+        tree.printSorted();
+        tree.printTree();
     }
 }

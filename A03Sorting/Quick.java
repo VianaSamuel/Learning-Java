@@ -14,7 +14,7 @@ public class Quick {
         // criação do array   
         int[] array = new int[10];
         
-        // preenchimento do array com números aleatórios de 10 a 99
+        // preenchimento do array com números aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
@@ -29,7 +29,7 @@ public class Quick {
         System.out.println("*-------------------------------------------------*\n");
         
         //=====QUICKSORT=====
-            // variáveis auxiliares
+            // variaveis auxiliares
             int beg = 0;
             int end = array.length-1;
 
@@ -38,7 +38,7 @@ public class Quick {
         //=====QUICKSORT=====
         
         // imprime o vetor ordenado
-        System.out.println("Vetor ordenado após o sort:");
+        System.out.println("Vetor ordenado apos o sort:");
         System.out.println("*-------------------------------------------------*");
         for (int i = 0; i < array.length; i++){
             System.out.print("| " + array[i] + " ");
@@ -48,7 +48,7 @@ public class Quick {
     }
     
     public static void quicksort(int[] array, int beg, int end){
-        // variáveis auxiliares
+        // variaveis auxiliares
         int i = beg;
         int j = end;
         int mid = (int) (beg+end)/2;
@@ -74,9 +74,9 @@ public class Quick {
             }
         }
 
-        // confere se lado ESQUERDO do pivô está ORDENADO, caso NÃO, chama o método recursivamente
+        // confere se lado ESQUERDO do pivô esta ORDENADO, caso NÃO, chama o método recursivamente
         if (j > beg) quicksort(array, beg, j);
-        // confere se lado DIREITO do pivô está ordenado, caso NÃO, chama o método recursivamente
+        // confere se lado DIREITO do pivô esta ordenado, caso NÃO, chama o método recursivamente
         if (end > i) quicksort(array, i, end);
     }
 }

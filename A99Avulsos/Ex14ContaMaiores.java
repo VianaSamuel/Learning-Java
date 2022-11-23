@@ -19,7 +19,7 @@ public class Ex14ContaMaiores {
 
         System.out.println();
 
-		System.out.println("Na lista há " + controlador + " maiores de idade.");
+		System.out.println("Na lista ha " + controlador + " maiores de idade.");
 
         input.close();
     }

@@ -15,7 +15,7 @@ public class Merge {
         int[] array = new int[10];
         int[] temp = new int[array.length];
         
-        // preenchimento do array com números aleatórios de 10 a 99
+        // preenchimento do array com números aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
@@ -30,7 +30,7 @@ public class Merge {
         System.out.println("*-------------------------------------------------*\n");
         
         //=====MERGESORT=====
-            // variáveis auxiliares
+            // variaveis auxiliares
             int beg = 0;
             int end = array.length-1;
 
@@ -39,7 +39,7 @@ public class Merge {
         //=====MERGESORT=====
         
         // imprime o vetor ordenado
-        System.out.println("Vetor ordenado após o sort:");
+        System.out.println("Vetor ordenado apos o sort:");
         System.out.println("*-------------------------------------------------*");
         for (int i = 0; i < array.length; i++){
             System.out.print("| " + array[i] + " ");
@@ -51,7 +51,7 @@ public class Merge {
     public static void mergesort(int[] array, int[] temp, int beg, int end){
         // define limite de ordenação pra cada chamada
         if (beg < end){
-            // variáveis auxiliares
+            // variaveis auxiliares
             int mid = (int) (beg+end)/2;
 
             // recursivamente ordena a primeira metade
@@ -65,11 +65,11 @@ public class Merge {
     }
 
     public static void merge(int[] array, int[]temp, int beg, int mid, int end){
-        // variáveis auxiliares
+        // variaveis auxiliares
         int i = beg;
         int j = mid+1;
 
-        // cria cópia do vetor original
+        // cria copia do vetor original
         for (int k = beg; k <= end; k++){
             temp[k] = array[k];
         }
@@ -88,13 +88,13 @@ public class Merge {
                 i++;
             }
 
-            // se ainda há de ser ordenado e o elemento da metade esquerda é menor do que o da metade direita, ordena
+            // se ainda ha de ser ordenado e o elemento da metade esquerda é menor do que o da metade direita, ordena
             else if (temp[i] < temp[j]){
                 array[k] = temp[i];
                 i++;
             }
 
-            // se o menor elemento já for o da metade direita, prossegue
+            // se o menor elemento ja for o da metade direita, prossegue
             else{
                 array[k] = temp[j];
                 j++;

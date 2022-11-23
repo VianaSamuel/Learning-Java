@@ -14,7 +14,7 @@ public class Sequencial {
         // criacao do array   
         int[] array = new int[10];
         
-        // preenchimento do array com números aleatórios de 10 a 99
+        // preenchimento do array com números aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
@@ -38,7 +38,7 @@ public class Sequencial {
     }
     
     public static void linearSearch(int[] array, int x) {
-        // variáveis auxiliares
+        // variaveis auxiliares
         int i = 0;
         boolean result = false;
 

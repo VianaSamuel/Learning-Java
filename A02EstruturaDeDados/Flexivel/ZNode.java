@@ -1,7 +1,7 @@
 package A02EstruturaDeDados.Flexivel;
 
 public class ZNode {
-    // cria nó e próximo nó
+    // cria node e proximo node
     private int value;
     private ZNode next;
 

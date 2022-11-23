@@ -1,14 +1,14 @@
 package A02EstruturaDeDados.Flexivel;
 
 public class Lista {
-    // o first será SEMPRE um NÓ CABEÇA de valor IRRELEVANTE //
-    // o PRIMEIRO ELEMENTO será SEMPRE first.getNext() //
+    // o first sera SEMPRE um NÓ CABEÇA de valor IRRELEVANTE //
+    // o PRIMEIRO ELEMENTO sera SEMPRE first.getNext() //
 
-    // cria primeiro nó, último nó, tamanho da estrutura
+    // cria primeiro node, último node, tamanho da estrutura
     private ZNode first, last;
     private int size;
 
-    // inicializa o tamanho, cabeca e último nó como 0
+    // inicializa o tamanho, cabeca e último node como 0
     public Lista(){
         size = 0;
         first = last = new ZNode(0);
@@ -50,7 +50,7 @@ public class Lista {
                 // percorre a estrutura até chegar ao ANTERIOR do NÓ DESEJADO
                 for (int i = 0; i < pos; i++) previous = previous.getNext();
 
-                // cria nó com o valor do input
+                // cria node com o valor do input
                 ZNode temp = new ZNode(x);
 
                 // 
@@ -64,7 +64,7 @@ public class Lista {
         }
 
         public void addStart(int x){
-            // cria nó com o valor do input
+            // cria node com o valor do input
             ZNode temp = new ZNode(x);
 
             // atualiza o PRÓXIMO DO NOVO NÓ como o ANTIGO PRIMEIRO NÓ
@@ -77,13 +77,13 @@ public class Lista {
                 last = temp;
             }
 
-            // incrementa o tamanho, libera o nó temporário
+            // incrementa o tamanho, libera o node temporario
             size++;
             temp = null;
         }
     
         public void addEnd(int x){
-            // cria nó com o valor do input
+            // cria node com o valor do input
             ZNode temp = new ZNode(x);
 
             // atualiza o PRÓXIMO DO ÚLTIMO NÓ como o NOVO NÓ
@@ -105,7 +105,7 @@ public class Lista {
                 // inicializa o percurso
                 ZNode previous = first;
 
-                // percorre até o nó ANTERIOR ao BUSCADO
+                // percorre até o node ANTERIOR ao BUSCADO
                 for (int i = 0; i < pos; i++) previous = previous.getNext();
 
                 // aponta o PRÓXIMO NÓ do ANTERIOR como o BUSCADO e guarda o seu valor
@@ -126,7 +126,7 @@ public class Lista {
         }
 
         public int removeEnd(){
-            // inicializa o nó temporário
+            // inicializa o node temporario
             ZNode temp;
 
             // percorre a estrutura até chegar ao ANTERIOR DO ÚLTIMO NÓ
@@ -141,7 +141,7 @@ public class Lista {
             // apaga o ÚLTIMO NÓ
             last.setNext(null);
 
-            // libera o nó temporário e retorna o valor apagado
+            // libera o node temporario e retorna o valor apagado
             temp = null;
             size--;
             return removed;
@@ -155,10 +155,10 @@ public class Lista {
             first = first.getNext();
             int removed = first.getValue();
 
-            // libera o PRIMEIRO NÓ e o temporário
+            // libera o PRIMEIRO NÓ e o temporario
             temp.setNext(null);
 
-            // libera o nó temporário e retorna o valor apagado
+            // libera o node temporario e retorna o valor apagado
             temp = null;
             size--;
             return removed;
@@ -168,14 +168,14 @@ public class Lista {
             // inicializa o percurso
             ZNode current = first.getNext();
 
-            // enquanto o próximo nó nao estiver vazio, percorre
+            // enquanto o proximo node nao estiver vazio, percorre
             for (int i = 0; i < pos; i++){
                 if (current.getNext() != null){
                     current = current.getNext();
                 }
             }
 
-            // retorna o último nó
+            // retorna o último node
             return current;
         }
 
@@ -189,7 +189,7 @@ public class Lista {
         }
 
         public boolean isEmpty(){
-            // se o NÓ CABEÇA for igual o ÚLTIMO NÓ (nulo/vazio), entao a estrutura está VAZIA
+            // se o NÓ CABEÇA for igual o ÚLTIMO NÓ (nulo/vazio), entao a estrutura esta VAZIA
             if (first == last) return true;
             else return false;
         }

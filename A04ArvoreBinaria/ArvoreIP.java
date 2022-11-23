@@ -1,19 +1,11 @@
-//=============================//
-//INSERIR POR PASSAGEM (de pai)//
-//=============================//
+//==============================//
+//INSERÇÃO POR PASSAGEM (de pai)//
+//==============================//
 
 package A04ArvoreBinaria;
 
-// INSERÇÃO POR PASSAGEM DE PAI
-public class ArvoreIP {
-    // cria o nó raíz-base
-    Node root;
+public class ArvoreIP extends Arvore{
     
-    // quando a árvore for criada, inicializa a raíz-base como nula
-    public ArvoreIP(){
-        this.root = null;
-    }
-
     //=====INSERIR POR PASSAGEM DE PAI=====
         public void insertParent(int value){
             if (root == null){
@@ -43,6 +35,6 @@ public class ArvoreIP {
     //=====INSERIR POR PASSAGEM DE PAI=====
 
     public static void main(String[] args) {
-        System.out.println("");
+
     }
 }

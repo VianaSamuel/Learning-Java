@@ -14,7 +14,7 @@ public class Insertion {
         // criação do array   
         int[] array = new int[10];
     
-        // preenchimento do array com números aleatórios de 10 a 99
+        // preenchimento do array com números aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
@@ -29,7 +29,7 @@ public class Insertion {
         System.out.println("*-------------------------------------------------*\n");
 
         //=====INSERTION SORT=====
-            // variáveis auxiliares
+            // variaveis auxiliares
             int j;
 
             // controlador
@@ -49,7 +49,7 @@ public class Insertion {
         //=====INSERTION SORT=====
 
         // imprime o vetor ordenado
-        System.out.println("Vetor ordenado após o sort:");
+        System.out.println("Vetor ordenado apos o sort:");
         System.out.println("*-------------------------------------------------*");
         for (int i = 0; i < array.length; i++){
             System.out.print("| " + array[i] + " ");

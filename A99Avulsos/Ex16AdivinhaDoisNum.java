@@ -45,7 +45,7 @@ public class Ex16AdivinhaDoisNum {
 	    }
 		
 		if (chute == num) {
-			System.out.println("Após " + tentativas + " tentativas, você acertou o número gerado (" + num+ ").");
+			System.out.println("Apos " + tentativas + " tentativas, você acertou o número gerado (" + num+ ").");
 		}
 
         input.close();
