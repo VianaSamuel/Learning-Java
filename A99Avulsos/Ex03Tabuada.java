@@ -5,7 +5,7 @@ public class Ex03Tabuada {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 		
-		System.out.print("Digite o número desejado: ");
+		System.out.print("Digite o numero desejado: ");
 		int numero = input.nextInt();
         System.out.println("");
 		

@@ -11,10 +11,10 @@ public class Quick {
         System.out.println("| QUICKSORT |");
         System.out.println("#===========#\n");
         
-        // criação do array   
+        // criacao do array   
         int[] array = new int[10];
         
-        // preenchimento do array com números aleatorios de 10 a 99
+        // preenchimento do array com numeros aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
@@ -33,7 +33,7 @@ public class Quick {
             int beg = 0;
             int end = array.length-1;
 
-            // chama método
+            // chama metodo
             quicksort(array, beg, end);
         //=====QUICKSORT=====
         
@@ -54,29 +54,29 @@ public class Quick {
         int mid = (int) (beg+end)/2;
         int pivot = array[mid];
 
-        // realiza quicksort enquanto os opostos NÃO se atravessam
+        // realiza quicksort enquanto os opostos NAO se atravessam
         while (i <= j){
-            // i++ enquanto NÃO achar elemento MAIOR que o pivô À ESQUERDA
+            // i++ enquanto NAO achar elemento MAIOR que o pivô a ESQUERDA
             while (array[i] < pivot) i++;
-            // j-- enquanto NÃO achar elemento MENOR que o pivô À DIREITA
+            // j-- enquanto NAO achar elemento MENOR que o pivô a DIREITA
             while (array[j] > pivot) j--;
 
-            // confere novamente se os opostos ainda não se atravessaram
+            // confere novamente se os opostos ainda nao se atravessaram
             if (i <= j){
                 // realiza swap
                 int aux = array[i];
                 array[i] = array[j];
                 array[j] = aux;
                 
-                // acréscimo e decremento
+                // acrescimo e decremento
                 i++;
                 j--;
             }
         }
 
-        // confere se lado ESQUERDO do pivô esta ORDENADO, caso NÃO, chama o método recursivamente
+        // confere se lado ESQUERDO do pivô esta ORDENADO, caso NAO, chama o metodo recursivamente
         if (j > beg) quicksort(array, beg, j);
-        // confere se lado DIREITO do pivô esta ordenado, caso NÃO, chama o método recursivamente
+        // confere se lado DIREITO do pivô esta ordenado, caso NAO, chama o metodo recursivamente
         if (end > i) quicksort(array, i, end);
     }
 }

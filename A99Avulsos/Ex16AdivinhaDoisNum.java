@@ -12,40 +12,40 @@ public class Ex16AdivinhaDoisNum {
 		System.out.println(num);
 		int tentativas = 0;
 		
-		System.out.printf("Tente adivinhar o número gerado: ");
+		System.out.printf("Tente adivinhar o numero gerado: ");
 		int chute = input.nextInt();
 
 		if (chute > num) {
-			System.out.println("O seu chute é maior do que o número gerado.");
+			System.out.println("O seu chute eh maior do que o numero gerado.");
 			System.out.println();
 			tentativas++;
 		}
 		
 		if (chute < num) {
-			System.out.println("O seu chute é menor do que o número gerado.");
+			System.out.println("O seu chute eh menor do que o numero gerado.");
 			System.out.println();
 			tentativas++;
 		}
 		
 		while (chute != num) {
-		    	System.out.printf("Tente adivinhar o número gerado: ");
+		    	System.out.printf("Tente adivinhar o numero gerado: ");
 		    	chute = input.nextInt();
             
 		    if (chute > num) {
-		    	System.out.println("O seu chute é maior do que o número gerado.");
+		    	System.out.println("O seu chute eh maior do que o numero gerado.");
 		    	System.out.println();
 		    	tentativas++;
 		    }
         
 		    if (chute < num) {
-		    	System.out.println("O seu chute é menor do que o número gerado.");
+		    	System.out.println("O seu chute eh menor do que o numero gerado.");
 		    	System.out.println();
 		    	tentativas++;
 		    }
 	    }
 		
 		if (chute == num) {
-			System.out.println("Apos " + tentativas + " tentativas, você acertou o número gerado (" + num+ ").");
+			System.out.println("Apos " + tentativas + " tentativas, voce acertou o numero gerado (" + num+ ").");
 		}
 
         input.close();

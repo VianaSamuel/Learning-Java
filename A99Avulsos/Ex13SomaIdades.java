@@ -18,7 +18,7 @@ public class Ex13SomaIdades {
 
         System.out.println();
 		
-		System.out.println("A soma das idades é " + soma + ".");
+		System.out.println("A soma das idades eh " + soma + ".");
 
         input.close();
     }

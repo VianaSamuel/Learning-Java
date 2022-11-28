@@ -17,7 +17,7 @@ public class Ex20CaracteresMaiusculas {
         }
 
         System.out.println("Quantidade de caracteres: " + palavra.length());
-        System.out.println("Quantidade de maiúsculas: " + cont);
+        System.out.println("Quantidade de maiusculas: " + cont);
 
         input.close();
     }

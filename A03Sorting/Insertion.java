@@ -11,10 +11,10 @@ public class Insertion {
         System.out.println("| INSERTION SORT |");
         System.out.println("#================#\n");
         
-        // criação do array   
+        // criacao do array   
         int[] array = new int[10];
     
-        // preenchimento do array com números aleatorios de 10 a 99
+        // preenchimento do array com numeros aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
@@ -34,12 +34,12 @@ public class Insertion {
 
             // controlador
             for (int i = 1; i < array.length; i++){
-                // define j como elemento à esquerda do controlador
+                // define j como elemento a esquerda do controlador
                 j = i-1;
 
-                // comparador (roda SE e ENQUANTO achar um elemento menor à direita)
+                // comparador (roda SE e ENQUANTO achar um elemento menor a direita)
                 while((j >= 0) && (array[j] > array[j+1])){
-                    // função swap (reordena a parte à esquerda do comparador)
+                    // funcao swap (reordena a parte a esquerda do comparador)
                     int aux = array[j];
                     array[j] = array[j+1];
                     array[j+1] = aux;

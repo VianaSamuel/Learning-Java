@@ -11,11 +11,11 @@ public class Merge {
         System.out.println("| MERGESORT |");
         System.out.println("#===========#\n");
         
-        // criação dos arrays 
+        // criacao dos arrays 
         int[] array = new int[10];
         int[] temp = new int[array.length];
         
-        // preenchimento do array com números aleatorios de 10 a 99
+        // preenchimento do array com numeros aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
@@ -34,7 +34,7 @@ public class Merge {
             int beg = 0;
             int end = array.length-1;
 
-            // chama método
+            // chama metodo
             mergesort(array, temp, beg, end);
         //=====MERGESORT=====
         
@@ -49,7 +49,7 @@ public class Merge {
     }
     
     public static void mergesort(int[] array, int[] temp, int beg, int end){
-        // define limite de ordenação pra cada chamada
+        // define limite de ordenacao pra cada chamada
         if (beg < end){
             // variaveis auxiliares
             int mid = (int) (beg+end)/2;
@@ -74,7 +74,7 @@ public class Merge {
             temp[k] = array[k];
         }
         
-        // intercalação
+        // intercalacao
         for (int k = beg; k <= end; k++){
             // se acabou de ordenar a primeira metade, copia direita do vetor
             if (i > mid){
@@ -88,7 +88,7 @@ public class Merge {
                 i++;
             }
 
-            // se ainda ha de ser ordenado e o elemento da metade esquerda é menor do que o da metade direita, ordena
+            // se ainda ha de ser ordenado e o elemento da metade esquerda eh menor do que o da metade direita, ordena
             else if (temp[i] < temp[j]){
                 array[k] = temp[i];
                 i++;

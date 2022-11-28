@@ -11,10 +11,10 @@ public class Selection {
         System.out.println("| SELECTION SORT |");
         System.out.println("#================#\n");
         
-        // criação do array   
+        // criacao do array   
         int[] array = new int[10];
     
-        // preenchimento do array com números aleatorios de 10 a 99
+        // preenchimento do array com numeros aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
@@ -43,7 +43,7 @@ public class Selection {
                     if (array[j] < array[min_idx]) min_idx = j;
                 }
 
-                // função swap
+                // funcao swap
                 int aux = array[i];
                 array[i] = array[min_idx];
                 array[min_idx] = aux;

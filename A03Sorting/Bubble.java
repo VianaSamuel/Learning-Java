@@ -11,10 +11,10 @@ public class Bubble {
         System.out.println("| BUBBLE SORT |");
         System.out.println("#=============#\n");
         
-        // criação do array   
+        // criacao do array   
         int[] array = new int[10];
     
-        // preenchimento do array com números aleatórios de 10 a 99
+        // preenchimento do array com numeros aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
@@ -33,7 +33,7 @@ public class Bubble {
             for (int i = array.length; i > 1; i--){
                 // comparador
                 for (int j = 0; j < i-1; j++){
-                    // se o elemento à direita for menor, realiza o swap
+                    // se o elemento a direita for menor, realiza o swap
                     if (array[j] > array[j+1]){
                         int aux = array[j];
                         array[j] = array[j+1];
@@ -44,7 +44,7 @@ public class Bubble {
         //=====BUBBLE SORT=====
 
         // imprime o vetor ordenado
-        System.out.println("Vetor ordenado após o sort:");
+        System.out.println("Vetor ordenado apos o sort:");
         System.out.println("*-------------------------------------------------*");
         for (int i = 0; i < array.length; i++){
             System.out.print("| " + array[i] + " ");

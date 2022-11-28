@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Binaria {
     public static void main(String[] args) {
         System.out.println("\n#==================#");
-        System.out.println("| PESQUISA BINÁRIA |");
+        System.out.println("| PESQUISA BINARIA |");
         System.out.println("#==================#\n");
 
         // inicializa o scanner
@@ -15,7 +15,7 @@ public class Binaria {
         // criacao do array
         int[] array = new int[10];
         
-        // preenchimento do array com números aleatorios de 10 a 99
+        // preenchimento do array com numeros aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
@@ -32,8 +32,8 @@ public class Binaria {
         System.out.println("|");
         System.out.println("*-------------------------------------------------*\n");
 
-        // recebe o número a ser procurado e chama o método
-        System.out.printf("Digite o número a ser procurado: ");
+        // recebe o numero a ser procurado e chama o metodo
+        System.out.printf("Digite o numero a ser procurado: ");
         int x = input.nextInt();
         binarySearch(array, x);
         
@@ -54,17 +54,17 @@ public class Binaria {
             // define o meio
             meio = (esq + dir) / 2;
 
-            // se o número procurado estiver no meio do array
+            // se o numero procurado estiver no meio do array
             if (x == array[meio]) {
                 result = true;
                 posicao = meio;
                 esq = array.length; // flag pra parar o loop
             }
-            // ignora DIREITA se o número procurado for MENOR do que o MEIO do array
+            // ignora DIREITA se o numero procurado for MENOR do que o MEIO do array
             else if (x < array[meio]) {
                 dir = meio - 1;
             }
-            // ignora ESQUERDA se o número procurado for MAIOR do que o MEIO do array
+            // ignora ESQUERDA se o numero procurado for MAIOR do que o MEIO do array
             else if (x > array[meio]) {
                 esq = meio + 1;
             }

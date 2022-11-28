@@ -18,7 +18,7 @@ public class Ex12MediaNotas {
 		int media = (soma/alunos);
 
 		System.out.println();
-		System.out.println("A média aritmética das notas é " + media + ".");
+		System.out.println("A media aritmetica das notas eh " + media + ".");
 
         input.close();
     }

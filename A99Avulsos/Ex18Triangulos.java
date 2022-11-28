@@ -18,11 +18,11 @@ public class Ex18Triangulos {
         System.out.println();
 
         if (a == b && a == c){
-            System.out.println("O triangulo é equilatero.");
+            System.out.println("O triangulo eh equilatero.");
         } else if (a == b && c != a || a == c && b != a || b == c && a != b) {
-            System.out.println("O triangulo é isosceles.");
+            System.out.println("O triangulo eh isosceles.");
         } else if (a != b && a != c && b != c){
-            System.out.println("O triangulo é escaleno.");
+            System.out.println("O triangulo eh escaleno.");
         }
 
         input.close();

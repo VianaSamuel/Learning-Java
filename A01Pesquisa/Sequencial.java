@@ -14,7 +14,7 @@ public class Sequencial {
         // criacao do array   
         int[] array = new int[10];
         
-        // preenchimento do array com números aleatorios de 10 a 99
+        // preenchimento do array com numeros aleatorios de 10 a 99
         for (int i = 0; i < array.length; i++){
             array[i] = (int) (new Random().nextInt(90) + 10);
         }
@@ -28,8 +28,8 @@ public class Sequencial {
         System.out.println("|");
         System.out.println("*-------------------------------------------------*\n");
 
-        // recebe o número a ser procurado e chama o método
-        System.out.printf("Digite o número a ser procurado: ");
+        // recebe o numero a ser procurado e chama o metodo
+        System.out.printf("Digite o numero a ser procurado: ");
         int x = input.nextInt();
         linearSearch(array, x);
         
@@ -42,7 +42,7 @@ public class Sequencial {
         int i = 0;
         boolean result = false;
 
-        // percorre o array enquanto o número nao for achado e o percurso nao ter sido finalizado
+        // percorre o array enquanto o numero nao for achado e o percurso nao ter sido finalizado
         while (!result && i < array.length) {
             if (array[i] == x) {
                 result = true;

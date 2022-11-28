@@ -13,7 +13,7 @@ public class Ex15SomaProdutos {
 			
 			if (produtos < 2) {
 			    System.out.println();
-				System.out.println("A quantidade mínima necessaria de produtos é 2.");
+				System.out.println("A quantidade minima necessaria de produtos eh 2.");
 			} else {
 				System.out.println();
 					
@@ -24,7 +24,7 @@ public class Ex15SomaProdutos {
 			    }
 
 			    System.out.println();
-			    System.out.println("A soma do preco dos produtos é de " + soma + ".");
+			    System.out.println("A soma do preco dos produtos eh de " + soma + ".");
 			}
 				
 			input.close();

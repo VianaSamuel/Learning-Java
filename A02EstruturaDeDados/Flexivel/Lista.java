@@ -1,14 +1,14 @@
 package A02EstruturaDeDados.Flexivel;
 
 public class Lista {
-    // o first sera SEMPRE um NÓ CABEÇA de valor IRRELEVANTE //
+    // o first sera SEMPRE um NODE CABECA de valor IRRELEVANTE //
     // o PRIMEIRO ELEMENTO sera SEMPRE first.getNext() //
 
-    // cria primeiro node, último node, tamanho da estrutura
+    // cria primeiro node, ultimo node, tamanho da estrutura
     private ZNode first, last;
     private int size;
 
-    // inicializa o tamanho, cabeca e último node como 0
+    // inicializa o tamanho, cabeca e ultimo node como 0
     public Lista(){
         size = 0;
         first = last = new ZNode(0);
@@ -35,11 +35,11 @@ public class Lista {
         }
     //=====GETTERS & SETTERS=====//
 
-    //=====MÉTODOS=====//
+    //=====METODOS=====//
         public void add(int x, int pos){
-            // se a posicao for 0, convoca o método de adicionar no INÍCIO
+            // se a posicao for 0, convoca o metodo de adicionar no INICIO
             if (pos == 0) addStart(x);
-            // se a posicao for (tamanho + 1), convoca o método de adicionar no FIM
+            // se a posicao for (tamanho + 1), convoca o metodo de adicionar no FIM
             else if (pos == size) addEnd(x);
 
             // para outras posicoes
@@ -47,7 +47,7 @@ public class Lista {
                 // inicializa o percurso
                 ZNode previous = first;
 
-                // percorre a estrutura até chegar ao ANTERIOR do NÓ DESEJADO
+                // percorre a estrutura ate chegar ao ANTERIOR do NODE DESEJADO
                 for (int i = 0; i < pos; i++) previous = previous.getNext();
 
                 // cria node com o valor do input
@@ -67,12 +67,12 @@ public class Lista {
             // cria node com o valor do input
             ZNode temp = new ZNode(x);
 
-            // atualiza o PRÓXIMO DO NOVO NÓ como o ANTIGO PRIMEIRO NÓ
+            // atualiza o PROXIMO DO NOVO NODE como o ANTIGO PRIMEIRO NODE
             temp.setNext(first.getNext());
-            // atualiza o PRIMEIRO NÓ como o NOVO NÓ
+            // atualiza o PRIMEIRO NODE como o NOVO NODE
             first.setNext(temp);
 
-            // se a estrutura estiver vazia, atualiza também o ÚLTIMO NÓ como o NOVO NÓ
+            // se a estrutura estiver vazia, atualiza tambem o ULTIMO NODE como o NOVO NODE
             if (isEmpty()){
                 last = temp;
             }
@@ -86,9 +86,9 @@ public class Lista {
             // cria node com o valor do input
             ZNode temp = new ZNode(x);
 
-            // atualiza o PRÓXIMO DO ÚLTIMO NÓ como o NOVO NÓ
+            // atualiza o PROXIMO DO ULTIMO NODE como o NOVO NODE
             last.setNext(temp);
-            // atualiza o ÚLTIMO NÓ como o NOVO NÓ
+            // atualiza o ULTIMO NODE como o NOVO NODE
             last = temp;
 
             // incrementa o tamanho
@@ -105,14 +105,14 @@ public class Lista {
                 // inicializa o percurso
                 ZNode previous = first;
 
-                // percorre até o node ANTERIOR ao BUSCADO
+                // percorre ate o node ANTERIOR ao BUSCADO
                 for (int i = 0; i < pos; i++) previous = previous.getNext();
 
-                // aponta o PRÓXIMO NÓ do ANTERIOR como o BUSCADO e guarda o seu valor
+                // aponta o PROXIMO NODE do ANTERIOR como o BUSCADO e guarda o seu valor
                 ZNode searched = previous.getNext();
                 removed = searched.getValue();
 
-                // REAPONTA o espaco a ser removido como o PRÓXIMO do BUSCADO
+                // REAPONTA o espaco a ser removido como o PROXIMO do BUSCADO
                 previous.setNext(searched.getNext());
 
                 // APAGA o 
@@ -129,16 +129,16 @@ public class Lista {
             // inicializa o node temporario
             ZNode temp;
 
-            // percorre a estrutura até chegar ao ANTERIOR DO ÚLTIMO NÓ
+            // percorre a estrutura ate chegar ao ANTERIOR DO ULTIMO NODE
             for (temp = first; temp.getNext() != last; temp = temp.getNext());
 
             // guarda o valor removido
             int removed = last.getValue();
 
-            // aponta o PENÚLTIMO NÓ como o (NOVO) ÚLTIMO NÓ
+            // aponta o PENULTIMO NODE como o (NOVO) ULTIMO NODE
             last = temp;
 
-            // apaga o ÚLTIMO NÓ
+            // apaga o ULTIMO NODE
             last.setNext(null);
 
             // libera o node temporario e retorna o valor apagado
@@ -148,14 +148,14 @@ public class Lista {
         }
     
         public int removeStart(){
-            // inicializa o NÓ TEMPORÁRIO como o NÓ CABEÇA  
+            // inicializa o NODE TEMPORARIO como o NODE CABECA  
             ZNode temp = first;
 
-            // aponta o PRIMEIRO NÓ e GUARDA O SEU VALOR
+            // aponta o PRIMEIRO NODE e GUARDA O SEU VALOR
             first = first.getNext();
             int removed = first.getValue();
 
-            // libera o PRIMEIRO NÓ e o temporario
+            // libera o PRIMEIRO NODE e o temporario
             temp.setNext(null);
 
             // libera o node temporario e retorna o valor apagado
@@ -175,7 +175,7 @@ public class Lista {
                 }
             }
 
-            // retorna o último node
+            // retorna o ultimo node
             return current;
         }
 
@@ -189,9 +189,9 @@ public class Lista {
         }
 
         public boolean isEmpty(){
-            // se o NÓ CABEÇA for igual o ÚLTIMO NÓ (nulo/vazio), entao a estrutura esta VAZIA
+            // se o NODE CABECA for igual o ULTIMO NODE (nulo/vazio), entao a estrutura esta VAZIA
             if (first == last) return true;
             else return false;
         }
-    //=====MÉTODOS=====//
+    //=====METODOS=====//
 }

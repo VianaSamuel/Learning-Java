@@ -9,13 +9,13 @@ public class Ex08AdivinhaNum {
 		
 		int num = random.nextInt(10) + 1;
 		
-		System.out.printf("Tente adivinhar o número gerado (1 a 10): ");
+		System.out.printf("Tente adivinhar o numero gerado (1 a 10): ");
 		int chute = input.nextInt();
 		
 		if (chute == num) {
-			System.out.println("Você acertou. O número gerado foi " + num + ".");
+			System.out.println("Voce acertou. O numero gerado foi " + num + ".");
 		} else {
-			System.out.println("Você errou. O número gerado foi " + num + ".");	
+			System.out.println("Voce errou. O numero gerado foi " + num + ".");	
 		}
 
         input.close();

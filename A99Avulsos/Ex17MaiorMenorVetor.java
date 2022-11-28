@@ -18,7 +18,7 @@ public class Ex17MaiorMenorVetor {
             if (array[i] < menor) menor = array[i];
         }
 
-        System.out.println("Maior número: " + maior);
-        System.out.println("Menor número: " + menor);
+        System.out.println("Maior numero: " + maior);
+        System.out.println("Menor numero: " + menor);
     }
 }

@@ -21,7 +21,7 @@ public class Ex19ContaLetra {
             }
         }
 
-        System.out.println("Número de ocorrências da letra '" + letra + "': " + cont);
+        System.out.println("Numero de ocorrencias da letra '" + letra + "': " + cont);
         
         input.close();
     }

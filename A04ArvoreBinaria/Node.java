@@ -1,7 +1,6 @@
-//==//
-//NÓ//
-//==//
-
+//====//
+//NODE//
+//====//
 package A04ArvoreBinaria;
 
 class Node{

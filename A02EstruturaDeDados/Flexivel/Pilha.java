@@ -26,7 +26,7 @@ public class Pilha {
         }
     //=====GETTERS & SETTERS=====//
 
-    //=====MÉTODOS=====//
+    //=====METODOS=====//
         public void add(int x){
             ZNode temp = new ZNode(x);
 
@@ -57,7 +57,7 @@ public class Pilha {
                 current = current.getNext();
             }
 
-            // retorna o último node
+            // retorna o ultimo node
             return current;
         }
 
@@ -69,5 +69,5 @@ public class Pilha {
             System.out.print("]");
             System.out.println();
         }
-    //=====MÉTODOS=====//
+    //=====METODOS=====//
 }

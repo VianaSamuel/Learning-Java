@@ -9,11 +9,11 @@ public class Ex07AprovadoOuReprovado {
 		float nota = input.nextFloat();
 		
 		if (nota >= 7) {
-			System.out.println("Você foi aprovado.");
+			System.out.println("Voce foi aprovado.");
 		} else if (nota >= 5 && nota < 7) {
-			System.out.println("Você foi reprovado, porém tem direito a fazer a recuperacao.");
+			System.out.println("Voce foi reprovado, porem tem direito a fazer a recuperacao.");
 		} else {
-			System.out.println("Você foi reprovado.");
+			System.out.println("Voce foi reprovado.");
 		}
 
         input.close();

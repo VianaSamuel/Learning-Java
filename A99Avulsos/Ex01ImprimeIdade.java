@@ -8,7 +8,7 @@ public class Ex01ImprimeIdade {
         
         System.out.print("Digite a idade: ");
         int idade = input.nextInt();
-        System.out.print("A idade digitada é: " + idade);
+        System.out.print("A idade digitada eh: " + idade);
     
         input.close();
     }
