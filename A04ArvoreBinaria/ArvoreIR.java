@@ -6,7 +6,6 @@ import java.util.Random;
 
 public class ArvoreIR extends Arvore{
     //=====INSERCAO POR REFERENCIA=====
-        // inicializa o percurso da arvore
         public void insert(int value){
             root = insert(value, root);
         }
@@ -18,11 +17,11 @@ public class ArvoreIR extends Arvore{
                 node = new Node(value);
             }
             
-            // senão, se o valor for MENOR do que o PAI, chama METODO a ESQUERDA
+            // senão, se o valor for MENOR do que o PAI, chama INSERT a ESQUERDA
             else if (value < node.value){
                 node.left = insert(value, node.left);
             }
-            // senão, se o valor for MAIOR do que o PAI, chama METODO a DIREITA
+            // senão, se o valor for MAIOR do que o PAI, chama INSERT a DIREITA
             else if (value > node.value){
                 node.right = insert(value, node.right);
             }
@@ -33,11 +32,13 @@ public class ArvoreIR extends Arvore{
     //=====INSERCAO POR REFERENCIA=====
 
     public static void main(String[] args) {
+        int[] num = new int[12];
         Random random = new Random();
-        ArvoreIR tree = new ArvoreIR();
+        ArvoreIP tree = new ArvoreIP();
         
         for (int i = 0; i < 12; i++){
-            tree.insert(random.nextInt(90) + 10);
+            num[i] = random.nextInt(90) + 10;
+            tree.insert(num[i]);
         }
 
         tree.printTree();
