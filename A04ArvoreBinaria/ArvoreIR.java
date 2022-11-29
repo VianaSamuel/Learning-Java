@@ -6,29 +6,29 @@ import java.util.Random;
 
 public class ArvoreIR extends Arvore{
     //=====INSERCAO POR REFERENCIA=====
-        // inicializa o percurso da arvore utilizando a raiz
+        // inicializa o percurso da arvore
         public void insert(int value){
             root = insert(value, root);
         }
 
-        // percorre toda a arvore, adiciona a ultima folha, e depois volta toda a arvore
-        public Node insert(int value, Node parent){
-            // se node estiver vazio, adiciona a folha
-            if (parent == null){
-                parent = new Node(value);
+        // PERCORRE toda a arvore -> ADICIONA a ultima folha -> VOLTA toda a arvore
+        public Node insert(int value, Node node){
+            // se NODE estiver VAZIO, ADICIONA a folha
+            if (node == null){
+                node = new Node(value);
             }
             
-            // se o valor for menor do que o pai, chama metodo a esquerda
-            else if (value < parent.value){
-                parent.left = insert(value, parent.left);
+            // senão, se o valor for MENOR do que o PAI, chama METODO a ESQUERDA
+            else if (value < node.value){
+                node.left = insert(value, node.left);
             }
-            // se o valor for maior do que o pai, chama metodo a direita
-            else if (value > parent.value){
-                parent.right = insert(value, parent.right);
+            // senão, se o valor for MAIOR do que o PAI, chama METODO a DIREITA
+            else if (value > node.value){
+                node.right = insert(value, node.right);
             }
 
-            // retorna o pai
-            return parent;
+            // retorna o ENDEREÇO
+            return node;
         }
     //=====INSERCAO POR REFERENCIA=====
 

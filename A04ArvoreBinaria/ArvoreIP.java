@@ -7,28 +7,41 @@ import java.util.Random;
 public class ArvoreIP extends Arvore{
     //=====INSERCAO POR PASSAGEM DE PAI=====
         public void insert(int value){
+            // se RAIZ estiver NULA, ADICIONA o elemento
             if (root == null){
                 root = new Node(value);
-            } else if (value < root.value){
-                insert(value, root.left, root);
-            } else if (value > root.value){
-                insert(value, root.right, root);
+            }
+            
+            // senão, se o valor for MENOR do que a RAIZ, chama METODO a ESQUERDA
+            else if (value < root.value){
+                insert(value, root, root.left);
+            }
+            // senão, se o valor for MAIOR do que a RAIZ, chama METODO a DIREITA
+            else if (value > root.value){
+                insert(value, root, root.right);
             }
         }
 
-        public void insert(int value, Node side, Node parent){
-            if (side == null){
+        public void insert(int value, Node parent, Node son){
+            // se o FILHO estiver VAZIO
+            if (son == null){
+                // se o valor for MENOR do que o FILHO, ADICIONA a ESQUERDA
                 if (value < parent.value){
                     parent.left = new Node(value);
-                } else if (value > parent.value){
+                }
+                // se o valor for MAIOR do que o FILHO, ADICIONA a DIREITA
+                else if (value > parent.value){
                     parent.right = new Node(value);
                 }
             }
-            else if (value < side.value){
-                insert(value, side.left, side);
+
+            // senão, se o valor for MENOR do que o FILHO, chama METODO a ESQUERDA
+            else if (value < son.value){
+                insert(value, son, son.left);
             }
-            else if (value > side.value){
-                insert(value, side.right, side);
+            // senão, se o valor for MAIOR do que o FILHO, chama METODO a DIREITA
+            else if (value > son.value){
+                insert(value, son, son.right);
             }
         }
     //=====INSERCAO POR PASSAGEM DE PAI=====
