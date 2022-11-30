@@ -23,19 +23,100 @@ public class Arvore {
 
             // se o NODE estiver VAZIO, retorna FALSE
             if (node == null) result = false;
-            // senão, se o PROCURADO for IGUAL o node, retorna TRUE
+            // senão, se o PROCURADO for IGUAL o NODE, retorna TRUE
             else if (x == node.value) result = true;
 
-            // senão, se o PROCURADO for MENOR que o node, chama PESQUISA a ESQUERDA
+            // senão, se o PROCURADO for MENOR que o NODE, caminha pra ESQUERDA
             else if (x < node.value) result = search(x, node.left);
-            // senão, se o PROCURADO for MAIOR que o node, chama PESQUISA a DIREITA
+            // senão, se o PROCURADO for MAIOR que o NODE, caminha pra DIREITA
             else if (x > node.value) result = search(x, node.right);
 
             // retorna o resultado
             return result;
         }
     //=====PESQUISA=====//
-    
+    //=====CAMINHAMENTOS=====//
+        //=====CENTRAL=====//
+        // da ESQUERDA para a DIREITA, eh ORDENDADO
+        void inOrder(Node node){
+            if (node != null){
+                inOrder(node.left);
+                System.out.print(node.value + " ");
+                inOrder(node.right);
+            }
+        }
+        void inOrder(){
+            inOrder(root);
+        }
+            
+        //=====PRE=====//
+        // primeiro os NODES (cima para baixo), depois as PONTAS
+        void preOrder(Node node){
+            if (node != null){
+                System.out.print(node.value + " ");
+                preOrder(node.left);
+                preOrder(node.right);
+            }
+        }
+        void preOrder(){
+            preOrder(root);
+        }
+
+        //=====POS=====//
+        // primeiro as PONTAS (baixo para cima), depois os NODES
+        void postOrder(Node node){
+            if (node != null){
+                postOrder(node.left);
+                postOrder(node.right);
+                System.out.print(node.value + " ");
+            }
+        }
+        void postOrder(){
+            postOrder(root);
+        }
+    //=====CAMINHAMENTOS=====//
+    //=====REMOCAO=====//
+    void remove(int x){
+        root = remove(x, root);
+    }
+    Node remove(int x, Node node){
+        // se NODE estiver VAZIO, retorna ERRO
+        if (node == null)System.out.println("Erro!");
+
+        // senão, se o PROCURADO for MENOR do que o NODE, caminha pra ESQUERDA
+        else if (x < node.value) node.left = remove(x, node.left);
+        // senão, se o PROCURADO for MAIOR do que o NODE, caminha pra DIREITA
+        else if (x > node.value) node.right = remove(x, node.right);
+
+        // !!! a partir daqui, o elemento foi ENCONTRADO !!! //
+
+        // se o NODE DIREITO estiver VAZIO, "COSTURA" o NODE da ESQUERDA
+        else if (node.right == null) node = node.left;
+        // se o NODE ESQUERDO estiver VAZIO, "COSTURA" o NODE da DIREITA
+        else if (node.left == null) node = node.right;
+
+        // se NENHUM estiver VAZIO, APONTA pro MAIOR ELEMENTO da ESQUERDA
+        else node.left = largeLeft(node, node.left);
+
+        // retorna o node
+        return node;
+    }
+    Node largeLeft(Node parent, Node son){
+        // se NODE DIREITO do filho estiver VAZIO
+        if (son.right == null){
+            // ATUALIZA o valor do PAI
+            parent.value = son.value;
+            // "COSTURA" o NODE ESQUERDO do filho
+            son = son.left;
+        }
+
+        // senão, caminha pra DIREITA
+        else son.right = largeLeft(parent, son.right);
+
+        // retorna o FILHO
+        return son;
+    }
+    //=====REMOCAO=====//
     //=====PRINTA ARVORE=====//
         public void printTree(){
             System.out.println("#--------#");
@@ -68,31 +149,24 @@ public class Arvore {
             printTree(node.left, height+1);
         }
     //=====PRINTA ARVORE=====//
-
     //=====PRINTA ELEMENTOS ORDENADOS=====//
-        public void printSorted(){
-            String sorted = printSortedString();
-            System.out.println("#----------------------#");
-            System.out.println("| ELEMENTOS ORDENADOS: |    " + sorted);
-            System.out.println("#----------------------#");
+        public void printInOrder(){
+            System.out.println("#-----------------------#");
+            System.out.print("| CAMINHAMENTO CENTRAL: |     [ " );
+            inOrder();
+            System.out.println("]\n#-----------------------#");
         }
-
-        public String printSortedString(){
-            return "[" + printSortedString(root) + "]";
+        public void printPreOrder(){
+            System.out.println("#-------------------#");
+            System.out.print("| CAMINHAMENTO PRE: |     [ " );
+            preOrder();
+            System.out.println("]\n#-------------------#");
         }
-
-        public String printSortedString(Node node){
-            // cria string de retorno
-            String temp = "";
-
-            // se node for nulo, nao retorna nada
-            if (node == null) return "";
-
-            // CAMINHAMENTO CENTRAL
-            temp += printSortedString(node.left);
-            temp += " " + node.value + " ";
-            temp += printSortedString(node.right);
-            return temp;
+        public void printPostOrder(){
+            System.out.println("#-------------------#");
+            System.out.print(  "| CAMINHAMENTO POS: |     [ " );
+            postOrder();
+            System.out.println("]\n#-------------------#");
         }
     //=====PRINTA ELEMENTOS ORDENADOS=====//
 }

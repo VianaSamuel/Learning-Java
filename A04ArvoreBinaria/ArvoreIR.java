@@ -13,18 +13,12 @@ public class ArvoreIR extends Arvore{
         // PERCORRE toda a arvore -> ADICIONA a ultima folha -> VOLTA toda a arvore
         public Node insert(int value, Node node){
             // se NODE estiver VAZIO, ADICIONA a folha
-            if (node == null){
-                node = new Node(value);
-            }
+            if (node == null) node = new Node(value);
             
-            // senão, se o valor for MENOR do que o PAI, chama INSERT a ESQUERDA
-            else if (value < node.value){
-                node.left = insert(value, node.left);
-            }
-            // senão, se o valor for MAIOR do que o PAI, chama INSERT a DIREITA
-            else if (value > node.value){
-                node.right = insert(value, node.right);
-            }
+            // senão, se o valor for MENOR do que o PAI, caminha pra ESQUERDA
+            else if (value < node.value) node.left = insert(value, node.left);
+            // senão, se o valor for MAIOR do que o PAI, caminha pra DIREITA
+            else if (value > node.value) node.right = insert(value, node.right);
 
             // retorna o ENDEREÇO
             return node;
@@ -42,6 +36,6 @@ public class ArvoreIR extends Arvore{
         }
 
         tree.printTree();
-        tree.printSorted();
+        tree.printInOrder();
     }
 }
