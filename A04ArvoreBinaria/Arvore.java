@@ -1,6 +1,9 @@
 //================//
 //ARVORE & METODOS//
 //================//
+
+//ORDEM: pesquisa -> remocao -> balanceamento -> caminhamentos -> prints
+
 package A04ArvoreBinaria;
 
 public class Arvore {
@@ -35,6 +38,96 @@ public class Arvore {
             return result;
         }
     //=====PESQUISA=====//
+    //=====REMOCAO=====//
+        void remove(int x){
+            root = remove(x, root);
+        }
+        Node remove(int x, Node node){
+            // se NODE estiver VAZIO, retorna ERRO
+            if (node == null)System.out.println("Erro!");
+
+            // senão, se o PROCURADO for MENOR do que o NODE, caminha pra ESQUERDA
+            else if (x < node.value) node.left = remove(x, node.left);
+            // senão, se o PROCURADO for MAIOR do que o NODE, caminha pra DIREITA
+            else if (x > node.value) node.right = remove(x, node.right);
+
+            // !!! a partir daqui, o elemento foi ENCONTRADO !!! //
+
+            // se o NODE DIREITO estiver VAZIO, "COSTURA" o NODE da ESQUERDA
+            else if (node.right == null) node = node.left;
+            // se o NODE ESQUERDO estiver VAZIO, "COSTURA" o NODE da DIREITA
+            else if (node.left == null) node = node.right;
+
+            // se NENHUM estiver VAZIO, APONTA pro MAIOR ELEMENTO da ESQUERDA
+            else node.left = largestLeft(node, node.left);
+
+            // retorna o node
+            return node;
+        }
+        Node largestLeft(Node parent, Node son){
+            // se NODE DIREITO do filho estiver VAZIO
+            if (son.right == null){
+                // ATUALIZA o valor do PAI
+                parent.value = son.value;
+                // "COSTURA" o NODE ESQUERDO do filho
+                son = son.left;
+            }
+
+            // senão, caminha pra DIREITA
+            else son.right = largestLeft(parent, son.right);
+
+            // retorna o FILHO
+            return son;
+        }
+    //=====REMOCAO=====//
+    //=====BALANCEAMENTO=====//
+        //=====ROTACOES SIMPLES=====//
+            // -> rotacao ANTI-HORARIA, desbalanceamento NEGATIVO (RETA & DIREITA)
+            Node singleLeft(Node grand){
+                //node PAI (DESBALANCEADO) a ser ESCALADO
+                Node father = grand.right;
+                //node FILHO a ser REALOCADO
+                Node son = grand.right.left;
+
+                //ESCALA o node PAI
+                father.left = grand;
+                //REALOCA o node FILHO
+                grand.right = son;
+
+                //retorna o node BALANCEADO
+                return father;
+            }
+
+            // -> rotacao HORARIA, desbalanceamento POSITIVO (RETA & ESQUERDA)
+            Node singleRight(Node grand){
+                //node PAI (DESBALANCEADO) a ser ESCALADO
+                Node father = grand.left;
+                //node FILHO a ser REALOCADO
+                Node son = grand.left.right;
+
+                //ESCALA o node PAI
+                father.right = grand;
+                //REALOCA o node FILHO
+                grand.left = son;
+
+                //retorna o node BALANCEADO
+                return father;
+            }
+        //=====ROTACOES SIMPLES=====//
+        //=====ROTACOES DUPLAS=====//
+            // -> rotacao (sRIGHT + sLEFT), desbalanceamento NEGATIVO->POSITIVO (JOELHO & DIREITA)
+            Node doubleLeft(Node grand){
+                grand.right = singleRight(grand);
+                return singleLeft(grand);
+            }
+            
+            // -> rotacao (sRIGHT + sLEFT), desbalanceamento NEGATIVO->POSITIVO (JOELHO & ESQUERDA)
+            Node doubleRight(Node grand){
+                grand.left = singleLeft(grand);
+                return singleRight(grand);
+            }
+        //=====ROTACOES DUPLAS=====//
+    //=====BALANCEAMENTO=====//
     //=====CAMINHAMENTOS=====//
         //=====CENTRAL=====//
         // da ESQUERDA para a DIREITA, eh ORDENDADO
@@ -75,49 +168,8 @@ public class Arvore {
             postOrder(root);
         }
     //=====CAMINHAMENTOS=====//
-    //=====REMOCAO=====//
-    void remove(int x){
-        root = remove(x, root);
-    }
-    Node remove(int x, Node node){
-        // se NODE estiver VAZIO, retorna ERRO
-        if (node == null)System.out.println("Erro!");
-
-        // senão, se o PROCURADO for MENOR do que o NODE, caminha pra ESQUERDA
-        else if (x < node.value) node.left = remove(x, node.left);
-        // senão, se o PROCURADO for MAIOR do que o NODE, caminha pra DIREITA
-        else if (x > node.value) node.right = remove(x, node.right);
-
-        // !!! a partir daqui, o elemento foi ENCONTRADO !!! //
-
-        // se o NODE DIREITO estiver VAZIO, "COSTURA" o NODE da ESQUERDA
-        else if (node.right == null) node = node.left;
-        // se o NODE ESQUERDO estiver VAZIO, "COSTURA" o NODE da DIREITA
-        else if (node.left == null) node = node.right;
-
-        // se NENHUM estiver VAZIO, APONTA pro MAIOR ELEMENTO da ESQUERDA
-        else node.left = largeLeft(node, node.left);
-
-        // retorna o node
-        return node;
-    }
-    Node largeLeft(Node parent, Node son){
-        // se NODE DIREITO do filho estiver VAZIO
-        if (son.right == null){
-            // ATUALIZA o valor do PAI
-            parent.value = son.value;
-            // "COSTURA" o NODE ESQUERDO do filho
-            son = son.left;
-        }
-
-        // senão, caminha pra DIREITA
-        else son.right = largeLeft(parent, son.right);
-
-        // retorna o FILHO
-        return son;
-    }
-    //=====REMOCAO=====//
-    //=====PRINTA ARVORE=====//
+    //=====PRINTS=====//
+        //=====PRINTA ARVORE=====//
         public void printTree(){
             System.out.println("#--------#");
             System.out.println("| ARVORE |");
@@ -148,8 +200,8 @@ public class Arvore {
             printTree(node.right, height+1);
             printTree(node.left, height+1);
         }
-    //=====PRINTA ARVORE=====//
-    //=====PRINTA ELEMENTOS ORDENADOS=====//
+        //=====PRINTA ARVORE=====//
+        //=====PRINTA CAMINHAMENTOS=====//
         public void printInOrder(){
             System.out.println("#-----------------------#");
             System.out.print("| CAMINHAMENTO CENTRAL: |     [ " );
@@ -168,5 +220,6 @@ public class Arvore {
             postOrder();
             System.out.println("]\n#-------------------#");
         }
-    //=====PRINTA ELEMENTOS ORDENADOS=====//
+        //=====PRINTA CAMINHAMENTOS=====//
+    //=====PRINTS=====//
 }
