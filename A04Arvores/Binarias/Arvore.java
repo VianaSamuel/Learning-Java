@@ -82,7 +82,6 @@ public class Arvore {
         void remove(int x){
             root = remove(x, root);
         }
-
         Node remove(int x, Node node){
             // se NODE estiver VAZIO, retorna ERRO
             if (node == null)System.out.println("Erro!");
@@ -106,11 +105,14 @@ public class Arvore {
             return node;
         }
 
+        void removeAVL(int x){
+            root = removeAVL(x, root);
+        }
         Node removeAVL(int x, Node node){
             if (node == null)System.out.println("Erro!");
 
-            else if (x < node.value) node.left = remove(x, node.left);
-            else if (x > node.value) node.right = remove(x, node.right);
+            else if (x < node.value) node.left = removeAVL(x, node.left);
+            else if (x > node.value) node.right = removeAVL(x, node.right);
 
             else if (node.right == null) node = node.left;
             else if (node.left == null) node = node.right;
