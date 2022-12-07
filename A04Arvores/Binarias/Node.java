@@ -1,7 +1,7 @@
 //====//
 //NODE//
 //====//
-package A04ArvoreBinaria;
+package A04Arvores.Binarias;
 
 class Node{
     // cria elemento e laterais

@@ -1,4 +1,4 @@
-package A04ArvoreBinaria;
+package A04Arvores.Binarias;
 
 public class ArvoreAVL extends Arvore {
     public static void main(String[] args) {

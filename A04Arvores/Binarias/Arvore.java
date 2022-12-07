@@ -4,7 +4,7 @@
 
 //ORDEM: insercoes -> remocao -> pesquisa -> balanceamento -> rotacoes -> caminhamentos -> prints
 
-package A04ArvoreBinaria;
+package A04Arvores.Binarias;
 
 public class Arvore {
     // cria o node raiz
@@ -166,7 +166,7 @@ public class Arvore {
                 // fator de balanceamento
                 int factor = Node.getLevel(node.right) - Node.getLevel(node.left);
 
-                // se ja balanceada
+                // se ja balanceada (modulo de fator)
                 if (Math.abs(factor) <= 1) node.setLevel();
 
                 // se desbalanceada pra DIREITA (POSITIVAMENTE)
@@ -199,62 +199,49 @@ public class Arvore {
         }
     //=====BALANCEAMENTO=====//
     //=====ROTACOES=====//
-        //-----SIMPLES-----//
-            // -> rotacao ANTI-HORARIA, desbalanceamento POSITIVO (RETA & DIREITA)
-            Node singleLeft(Node grand){
-                System.out.println("---> Rotacionando ESQUERDA (" + grand.value + ")");
-                //node PAI (DESBALANCEADO) a ser ESCALADO
-                Node father = grand.right;
-                //node FILHO a ser REALOCADO
-                Node son = father.left;
+        // -> rotacao ANTI-HORARIA, desbalanceamento POSITIVO (RETA & DIREITA)
+        Node singleLeft(Node grand){
+            System.out.println("---> Rotacionando ESQUERDA (" + grand.value + ")");
 
-                //ESCALA o node PAI
-                father.left = grand;
-                //REALOCA o node FILHO
-                grand.right = son;
+            //node PAI (DESBALANCEADO) a ser ESCALADO
+            Node father = grand.right;
+            //node FILHO a ser REALOCADO
+            Node son = father.left;
 
-                //atualiza os niveis dos nodes
-                grand.setLevel();
-                father.setLevel();
+            //ESCALA o node PAI
+            father.left = grand;
+            //REALOCA o node FILHO
+            grand.right = son;
 
-                //retorna o node BALANCEADO
-                return father;
-            }
+            //atualiza os niveis dos nodes
+            grand.setLevel();
+            father.setLevel();
 
-            // -> rotacao HORARIA, desbalanceamento NEGATIVO (RETA & ESQUERDA)
-            Node singleRight(Node grand){
-                System.out.println("---> Rotacionando DIREITA (" + grand.value + ")");
-                //node PAI (DESBALANCEADO) a ser ESCALADO
-                Node father = grand.left;
-                //node FILHO a ser REALOCADO
-                Node son = father.right;
+            //retorna o node BALANCEADO
+            return father;
+        }
 
-                //ESCALA o node PAI
-                father.right = grand;
-                //REALOCA o node FILHO
-                grand.left = son;
+        // -> rotacao HORARIA, desbalanceamento NEGATIVO (RETA & ESQUERDA)
+        Node singleRight(Node grand){
+            System.out.println("---> Rotacionando DIREITA (" + grand.value + ")");
 
-                //atualiza os niveis dos nodes
-                grand.setLevel();
-                father.setLevel();
+            //node PAI (DESBALANCEADO) a ser ESCALADO
+            Node father = grand.left;
+            //node FILHO a ser REALOCADO
+            Node son = father.right;
 
-                //retorna o node BALANCEADO
-                return father;
-            }
-        //-----SIMPLES-----//
-        //-----DUPLAS-----//
-            // -> rotacao (DIREITA + ESQUERDA), desbalanceamento POSITIVO->NEGATIVO (JOELHO & DIREITA)
-            Node doubleLeft(Node grand){
-                grand.right = singleRight(grand);
-                return singleLeft(grand);
-            }
-            
-            // -> rotacao (ESQUERDA + DIREITA), desbalanceamento NEGATIVO->POSITIVO (JOELHO & ESQUERDA)
-            Node doubleRight(Node grand){
-                grand.left = singleLeft(grand);
-                return singleRight(grand);
-            }
-        //-----DUPLAS-----//
+            //ESCALA o node PAI
+            father.right = grand;
+            //REALOCA o node FILHO
+            grand.left = son;
+
+            //atualiza os niveis dos nodes
+            grand.setLevel();
+            father.setLevel();
+
+            //retorna o node BALANCEADO
+            return father;
+        }
     //=====ROTACOES=====//
     //=====CAMINHAMENTOS=====//
         //-----CENTRAL-----//
