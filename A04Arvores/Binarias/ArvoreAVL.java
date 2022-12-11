@@ -58,30 +58,33 @@ public class ArvoreAVL extends Arvore {
         if (node != null){
             // fator de balanceamento
             int factor = Node.getLevel(node.right) - Node.getLevel(node.left);
-
-            // se ja balanceada (modulo de fator)
+            // se JA BALANCEADA (modulo de fator),  INCREMENTA ALTURA
             if (Math.abs(factor) <= 1) node.setLevel();
 
-            // se desbalanceada pra DIREITA (POSITIVAMENTE)
+            // se desbalanceada pra DIREITA
             else if (factor == 2){
                 // define FILHO e seu FATOR
                 Node son = node.right;
                 int factorSon = Node.getLevel(son.right) - Node.getLevel(son.left);
-
-                // se o filho da DIREITA tambem estiver DESBALANCEADO
+                
+                // "JOELHO DIREITA"
+                // SE o filho da DIREITA tambem estiver DESBALANCEADO
+                // rotaciona DIREITA
                 if (factorSon == -1) node.right = singleRight(son);
 
                 // rotacao ESQUERDA
                 node = singleLeft(node);
             }
 
-            // se desbalanceada pra ESQUERDA (NEGATIVAMENTE)
+            // se desbalanceada pra ESQUERDA
             else if (factor == -2){
                 // define FILHO e seu FATOR
                 Node son = node.left;
                 int factorSon = Node.getLevel(son.right) - Node.getLevel(son.left);
 
-                // se o filho da ESQUERDA tambem estiver DESBALANCEADO
+                // "JOELHO ESQUERDA"
+                // SE o filho da ESQUERDA tambem estiver DESBALANCEADO
+                // rotaciona ESQUERDA
                 if (factorSon == 1) node.left = singleLeft(son);
 
                 // rotacao DIREITA
