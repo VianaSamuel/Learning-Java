@@ -28,11 +28,11 @@ public class HashReserva {
         }
     }
     
-    //=====FUNCAO HASH=====//
+    //=====HASH=====//
         public int hash(int x){
             return x % 7;
         }
-    //=====FUNCAO HASH=====//
+    //=====HASH=====//
     //=====INSERT=====//
         public boolean insert(int x){
             boolean result = false;

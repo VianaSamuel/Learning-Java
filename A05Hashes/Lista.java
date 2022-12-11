@@ -1,4 +1,4 @@
-package A02EstruturasDeDados.Flexivel;
+package A05Hashes;
 
 public class Lista {
     // o first sera SEMPRE um NODE CABECA de valor IRRELEVANTE //
@@ -9,7 +9,7 @@ public class Lista {
 
     public Lista(){
         size = 0;
-        first = last = new Node(0);
+        first = last = new Node(-1);
     }
 
     //=====GETTERS & SETTERS=====//
@@ -102,7 +102,7 @@ public class Lista {
         //-----REMOVE-----//
         public int remove(int pos){
             // inicializa o retorno
-            int removed = 0;
+            int removed = -1;
 
             // se a lista nao estiver vazia e a posicao for valida
             if (first != last && pos >= 0 && pos < size){
@@ -140,7 +140,7 @@ public class Lista {
         //-----REMOVE START-----//
         public int removeStart(){
             // inicializa o retorno
-            int removed = 0;
+            int removed = -1;
 
             // se a lista nao estiver vazia
             if (first != last){
@@ -163,7 +163,7 @@ public class Lista {
         //-----REMOVE END-----//
         public int removeEnd(){
             // inicializa o retorno
-            int removed = 0;
+            int removed = -1;
 
             // se a lista nao estiver vazia
             if (first != last){
@@ -230,4 +230,29 @@ public class Lista {
             System.out.println();
         }
     //=====SHOW=====//
+}
+
+class Node {
+    private int value;      // valor
+    private Node next;      // proximo node
+
+    // construtor
+    public Node(int newValue){
+        this.value = newValue;
+    }
+
+    //=====GETTERS & SETTERS=====//
+    public int getValue(){
+        return value;
+    }
+    public void setValue(int value){
+        this.value = value;
+    }
+    public Node getNext(){
+        return next;
+    }
+    public void setNext(Node next){
+        this.next = next;
+    }
+    //=====GETTERS & SETTERS=====//
 }

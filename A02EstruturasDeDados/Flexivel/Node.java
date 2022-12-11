@@ -1,16 +1,15 @@
 package A02EstruturasDeDados.Flexivel;
 
 public class Node {
-    // cria node e proximo node
-    private int value;
-    private Node next;
+    private int value;      // valor
+    private Node next;      // proximo node
 
     // construtor
     public Node(int newValue){
         this.value = newValue;
     }
 
-    // getters e setters
+    //=====GETTERS & SETTERS=====//
     public int getValue(){
         return value;
     }
@@ -23,4 +22,5 @@ public class Node {
     public void setNext(Node next){
         this.next = next;
     }
+    //=====GETTERS & SETTERS=====//
 }

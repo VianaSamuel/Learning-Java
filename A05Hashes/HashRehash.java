@@ -7,7 +7,7 @@ package A05Hashes;
 
 public class HashRehash {
     final int EMPTY = -1;       // flag de index vazio
-    int table[];                // tabela original
+    int table[];                // tabela
     int t;                      // tamanho da tabela
 
     // cria a tabela
@@ -24,14 +24,14 @@ public class HashRehash {
         }
     }
 
-    //=====FUNCOES HASH=====//
+    //=====HASH=====//
         public int hash(int x){
             return x % t;
         }
         public int rehash(int x){
             return ++x % t;
         }
-    //=====FUNCOES HASH=====//
+    //=====HASH=====//
     //=====INSERT=====//
         public boolean insert(int x){
             boolean result = false;
@@ -40,7 +40,7 @@ public class HashRehash {
                 // calcula index com o hash
                 int id = hash(x);
 
-                // INSERE NA ORIGINAL se o index da tabela estiver VAZIO
+                // INSERE DIRETO na tabela se o index dela estiver VAZIO
                 if (table[id] == EMPTY){
                     table[id] = x;
                     result = true;
