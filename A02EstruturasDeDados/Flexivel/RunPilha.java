@@ -1,4 +1,4 @@
-package A02EstruturaDeDados.Flexivel;
+package A02EstruturasDeDados.Flexivel;
 
 public class RunPilha {
     public static void main(String[] args) {

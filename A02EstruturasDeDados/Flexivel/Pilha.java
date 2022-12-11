@@ -1,8 +1,8 @@
-package A02EstruturaDeDados.Flexivel;
+package A02EstruturasDeDados.Flexivel;
 
 public class Pilha {
     // cria o node-topo
-    private ZNode top;
+    private Node top;
     private int size;
     
     // inicializa o tamanho como 0 e o topo como nulo 
@@ -12,10 +12,10 @@ public class Pilha {
     }
 
     //=====GETTERS & SETTERS=====//
-        public ZNode getTop() {
+        public Node getTop() {
             return top;
         }
-        public void setTop(ZNode top) {
+        public void setTop(Node top) {
             this.top = top;
         }
         public int getSize() {
@@ -28,7 +28,7 @@ public class Pilha {
 
     //=====METODOS=====//
         public void add(int x){
-            ZNode temp = new ZNode(x);
+            Node temp = new Node(x);
 
             temp.setNext(top);
             top = temp;
@@ -40,7 +40,7 @@ public class Pilha {
         public int remove(){
             int removed = top.getValue();
 
-            ZNode temp = top;
+            Node temp = top;
             top = top.getNext();
             temp.setNext(null);
 
@@ -49,9 +49,9 @@ public class Pilha {
             return removed;
         }
 
-        public ZNode get(int pos){
+        public Node get(int pos){
             // inicializa o percurso
-            ZNode current = top;
+            Node current = top;
 
             for (int i = 0; i < pos; i++){
                 current = current.getNext();
@@ -63,7 +63,7 @@ public class Pilha {
 
         public void show(){
             System.out.print("[ ");
-            for (ZNode i = top; i != null; i = i.getNext()){
+            for (Node i = top; i != null; i = i.getNext()){
                 System.out.print(i.getValue() + " ");
             }
             System.out.print("]");

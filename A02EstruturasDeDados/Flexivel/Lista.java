@@ -1,30 +1,28 @@
-package A02EstruturaDeDados.Flexivel;
+package A02EstruturasDeDados.Flexivel;
 
 public class Lista {
     // o first sera SEMPRE um NODE CABECA de valor IRRELEVANTE //
     // o PRIMEIRO ELEMENTO sera SEMPRE first.getNext() //
 
-    // cria primeiro node, ultimo node, tamanho da estrutura
-    private ZNode first, last;
-    private int size;
+    private Node first, last;      // nodes -> primeiro e ultimo
+    private int size;               // tamanho da estrutura
 
-    // inicializa o tamanho, cabeca e ultimo node como 0
     public Lista(){
         size = 0;
-        first = last = new ZNode(0);
+        first = last = new Node(0);
     }
 
     //=====GETTERS & SETTERS=====//
-        public ZNode getFirst(){
+        public Node getFirst(){
             return first;
         }
-        public void setFirst(ZNode first){
+        public void setFirst(Node first){
             this.first = first;
         }
-        public ZNode getLast(){
+        public Node getLast(){
             return last;
         }
-        public void setLast(ZNode last){
+        public void setLast(Node last){
             this.last = last;
         }
         public int getSize(){
@@ -45,13 +43,13 @@ public class Lista {
             // para outras posicoes
             else {
                 // inicializa o percurso
-                ZNode previous = first;
+                Node previous = first;
 
                 // percorre a estrutura ate chegar ao ANTERIOR do NODE DESEJADO
                 for (int i = 0; i < pos; i++) previous = previous.getNext();
 
                 // cria node com o valor do input
-                ZNode temp = new ZNode(x);
+                Node temp = new Node(x);
 
                 // 
                 temp.setNext(previous.getNext());
@@ -65,7 +63,7 @@ public class Lista {
 
         public void addStart(int x){
             // cria node com o valor do input
-            ZNode temp = new ZNode(x);
+            Node temp = new Node(x);
 
             // atualiza o PROXIMO DO NOVO NODE como o ANTIGO PRIMEIRO NODE
             temp.setNext(first.getNext());
@@ -84,7 +82,7 @@ public class Lista {
     
         public void addEnd(int x){
             // cria node com o valor do input
-            ZNode temp = new ZNode(x);
+            Node temp = new Node(x);
 
             // atualiza o PROXIMO DO ULTIMO NODE como o NOVO NODE
             last.setNext(temp);
@@ -103,13 +101,13 @@ public class Lista {
             else if (pos == size-1) removed = removeEnd();
             else {
                 // inicializa o percurso
-                ZNode previous = first;
+                Node previous = first;
 
                 // percorre ate o node ANTERIOR ao BUSCADO
                 for (int i = 0; i < pos; i++) previous = previous.getNext();
 
                 // aponta o PROXIMO NODE do ANTERIOR como o BUSCADO e guarda o seu valor
-                ZNode searched = previous.getNext();
+                Node searched = previous.getNext();
                 removed = searched.getValue();
 
                 // REAPONTA o espaco a ser removido como o PROXIMO do BUSCADO
@@ -127,7 +125,7 @@ public class Lista {
 
         public int removeEnd(){
             // inicializa o node temporario
-            ZNode temp;
+            Node temp;
 
             // percorre a estrutura ate chegar ao ANTERIOR DO ULTIMO NODE
             for (temp = first; temp.getNext() != last; temp = temp.getNext());
@@ -149,7 +147,7 @@ public class Lista {
     
         public int removeStart(){
             // inicializa o NODE TEMPORARIO como o NODE CABECA  
-            ZNode temp = first;
+            Node temp = first;
 
             // aponta o PRIMEIRO NODE e GUARDA O SEU VALOR
             first = first.getNext();
@@ -164,9 +162,9 @@ public class Lista {
             return removed;
         }
     
-        public ZNode get(int pos){
+        public Node get(int pos){
             // inicializa o percurso
-            ZNode current = first.getNext();
+            Node current = first.getNext();
 
             // enquanto o proximo node nao estiver vazio, percorre
             for (int i = 0; i < pos; i++){
@@ -181,7 +179,7 @@ public class Lista {
 
         public void show(){
             System.out.print("[ ");
-            for (ZNode i = first.getNext(); i != null; i = i.getNext()){
+            for (Node i = first.getNext(); i != null; i = i.getNext()){
                 System.out.print(i.getValue() + " ");
             }
             System.out.print("]");

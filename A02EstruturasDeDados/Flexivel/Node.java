@@ -1,12 +1,12 @@
-package A02EstruturaDeDados.Flexivel;
+package A02EstruturasDeDados.Flexivel;
 
-public class ZNode {
+public class Node {
     // cria node e proximo node
     private int value;
-    private ZNode next;
+    private Node next;
 
     // construtor
-    public ZNode(int newValue){
+    public Node(int newValue){
         this.value = newValue;
     }
 
@@ -17,10 +17,10 @@ public class ZNode {
     public void setValue(int value){
         this.value = value;
     }
-    public ZNode getNext(){
+    public Node getNext(){
         return next;
     }
-    public void setNext(ZNode next){
+    public void setNext(Node next){
         this.next = next;
     }
 }
