@@ -1,18 +1,18 @@
-//============================//
-//INSERCAO POR PASSAGEM DE PAI//
-//============================//
+//=======================//
+//INSERCAO POR REFERENCIA//
+//=======================//
 package A04Arvores.Binarias;
 import java.util.Random;
 
-public class main_IP extends ArvoreIP{
+public class RunArvore extends Arvore{
     public static void main(String[] args) {
         int[] array = new int[12];
         Random random = new Random();
-        main_IP tree = new main_IP();
+        RunArvore tree = new RunArvore();
         
         for (int i: array){
             array[i] = random.nextInt(90) + 10;
-            tree.insertFather(array[i]);
+            tree.insert(array[i]);
         }
 
         tree.printTree();

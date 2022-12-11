@@ -3,9 +3,9 @@
 //================//
 package A04Arvores.Binarias;
 
-public class main_AVL extends ArvoreAVL {
+public class RunAVL extends ArvoreAVL {
     public static void main(String[] args) {
-        main_AVL tree = new main_AVL();
+        RunAVL tree = new RunAVL();
         int array[] = {4,35,10,13,3,30,15,12,7,40,20};
 
         for(int i: array){

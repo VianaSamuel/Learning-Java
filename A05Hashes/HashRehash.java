@@ -1,7 +1,6 @@
 //===========//
 //HASH REHASH//
 //===========//
-
 // ORDEM: hash -> insert -> search -> remove
 
 package A05Hashes;

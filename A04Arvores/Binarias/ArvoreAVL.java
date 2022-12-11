@@ -1,7 +1,6 @@
 //==========//
 //ARVORE AVL//
 //==========//
-
 //ORDEM: insercao -> remocao -> balanceamento -> rotacoes -> caminhamento
 
 package A04Arvores.Binarias;

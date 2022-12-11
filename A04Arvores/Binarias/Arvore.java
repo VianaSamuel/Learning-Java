@@ -1,7 +1,6 @@
 //==============//
 //ARVORE BINARIA//
 //==============//
-
 //ORDEM: insercao -> pesquisa -> remocao -> caminhamentos -> prints
 
 package A04Arvores.Binarias;
