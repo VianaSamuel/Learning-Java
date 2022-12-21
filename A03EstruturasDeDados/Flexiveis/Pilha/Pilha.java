@@ -3,8 +3,8 @@
 //==============//
 //METODOS: add -> remove -> get -> search -> show
 
-package A02EstruturasDeDados.Flexiveis.Pilha;
-import A02EstruturasDeDados.Flexiveis.Node;
+package A03EstruturasDeDados.Flexiveis.Pilha;
+import A03EstruturasDeDados.Flexiveis.Node;
 
 public class Pilha {
     private Node first;     // primeiro node

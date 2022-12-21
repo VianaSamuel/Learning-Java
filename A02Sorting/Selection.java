@@ -1,14 +1,14 @@
 //==============//
-//INSERTION SORT//
+//SELECTION SORT//
 //==============//
 
-package A03Sorting;
+package A02Sorting;
 import java.util.Random;
 
-public class Insertion {
+public class Selection {
     public static void main(String[] args) {     
         System.out.println("\n#================#");
-        System.out.println("| INSERTION SORT |");
+        System.out.println("| SELECTION SORT |");
         System.out.println("#================#\n");
         
         // criacao do array   
@@ -28,26 +28,28 @@ public class Insertion {
         System.out.println("|");
         System.out.println("*-------------------------------------------------*\n");
 
-        //=====INSERTION SORT=====
+        //=====SELECTION SORT=====
             // variaveis auxiliares
-            int j;
+            int min_idx;
 
             // controlador
-            for (int i = 1; i < array.length; i++){
-                // define j como elemento a esquerda do controlador
-                j = i-1;
+            for (int i = 0; i < array.length-1; i++){
+                // define a esquerda do vetor como o menor elemento
+                min_idx = i;
 
-                // comparador (roda SE e ENQUANTO achar um elemento menor a direita)
-                while((j >= 0) && (array[j] > array[j+1])){
-                    // funcao swap (reordena a parte a esquerda do comparador)
-                    int aux = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = aux;
-                    j--;
+                // comparador
+                for (int j = i+1; j < array.length; j++){
+                    // se o elemento j for menor do que o menor elemento, realiza a troca
+                    if (array[j] < array[min_idx]) min_idx = j;
                 }
-            }
-        //=====INSERTION SORT=====
 
+                // funcao swap
+                int aux = array[i];
+                array[i] = array[min_idx];
+                array[min_idx] = aux;
+            }
+        //=====SELECTION SORT=====
+        
         // imprime o vetor ordenado
         System.out.println("Vetor ordenado apos o sort:");
         System.out.println("*-------------------------------------------------*");

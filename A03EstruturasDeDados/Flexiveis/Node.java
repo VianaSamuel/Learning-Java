@@ -1,4 +1,4 @@
-package A02EstruturasDeDados.Flexiveis;
+package A03EstruturasDeDados.Flexiveis;
 
 public class Node {
     private int value;      // valor

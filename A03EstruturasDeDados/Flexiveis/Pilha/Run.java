@@ -1,4 +1,4 @@
-package A02EstruturasDeDados.Flexiveis.Pilha;
+package A03EstruturasDeDados.Flexiveis.Pilha;
 import java.util.Random;
 
 public class Run {

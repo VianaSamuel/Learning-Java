@@ -3,8 +3,8 @@
 //==============//
 //METODOS: add -> remove -> get -> search -> show
 
-package A02EstruturasDeDados.Flexiveis.Lista;
-import A02EstruturasDeDados.Flexiveis.Node;
+package A03EstruturasDeDados.Flexiveis.Lista;
+import A03EstruturasDeDados.Flexiveis.Node;
 
 public class Lista {
     // o first sera SEMPRE um NODE CABECA de valor IRRELEVANTE //

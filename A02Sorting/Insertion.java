@@ -1,15 +1,15 @@
-//===========//
-//BUBBLE SORT//
-//===========//
+//==============//
+//INSERTION SORT//
+//==============//
 
-package A03Sorting;
+package A02Sorting;
 import java.util.Random;
 
-public class Bubble {
+public class Insertion {
     public static void main(String[] args) {     
-        System.out.println("\n#=============#");
-        System.out.println("| BUBBLE SORT |");
-        System.out.println("#=============#\n");
+        System.out.println("\n#================#");
+        System.out.println("| INSERTION SORT |");
+        System.out.println("#================#\n");
         
         // criacao do array   
         int[] array = new int[10];
@@ -28,20 +28,25 @@ public class Bubble {
         System.out.println("|");
         System.out.println("*-------------------------------------------------*\n");
 
-        //=====BUBBLE SORT=====
+        //=====INSERTION SORT=====
+            // variaveis auxiliares
+            int j;
+
             // controlador
-            for (int i = array.length; i > 1; i--){
-                // comparador
-                for (int j = 0; j < i-1; j++){
-                    // se o elemento a direita for menor, realiza o swap
-                    if (array[j] > array[j+1]){
-                        int aux = array[j];
-                        array[j] = array[j+1];
-                        array[j+1] = aux;
-                    }
+            for (int i = 1; i < array.length; i++){
+                // define j como elemento a esquerda do controlador
+                j = i-1;
+
+                // comparador (roda SE e ENQUANTO achar um elemento menor a direita)
+                while((j >= 0) && (array[j] > array[j+1])){
+                    // funcao swap (reordena a parte a esquerda do comparador)
+                    int aux = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = aux;
+                    j--;
                 }
             }
-        //=====BUBBLE SORT=====
+        //=====INSERTION SORT=====
 
         // imprime o vetor ordenado
         System.out.println("Vetor ordenado apos o sort:");

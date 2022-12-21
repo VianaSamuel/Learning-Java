@@ -1,15 +1,15 @@
-//==============//
-//SELECTION SORT//
-//==============//
+//===========//
+//BUBBLE SORT//
+//===========//
 
-package A03Sorting;
+package A02Sorting;
 import java.util.Random;
 
-public class Selection {
+public class Bubble {
     public static void main(String[] args) {     
-        System.out.println("\n#================#");
-        System.out.println("| SELECTION SORT |");
-        System.out.println("#================#\n");
+        System.out.println("\n#=============#");
+        System.out.println("| BUBBLE SORT |");
+        System.out.println("#=============#\n");
         
         // criacao do array   
         int[] array = new int[10];
@@ -28,28 +28,21 @@ public class Selection {
         System.out.println("|");
         System.out.println("*-------------------------------------------------*\n");
 
-        //=====SELECTION SORT=====
-            // variaveis auxiliares
-            int min_idx;
-
+        //=====BUBBLE SORT=====
             // controlador
-            for (int i = 0; i < array.length-1; i++){
-                // define a esquerda do vetor como o menor elemento
-                min_idx = i;
-
+            for (int i = array.length; i > 1; i--){
                 // comparador
-                for (int j = i+1; j < array.length; j++){
-                    // se o elemento j for menor do que o menor elemento, realiza a troca
-                    if (array[j] < array[min_idx]) min_idx = j;
+                for (int j = 0; j < i-1; j++){
+                    // se o elemento a direita for menor, realiza o swap
+                    if (array[j] > array[j+1]){
+                        int aux = array[j];
+                        array[j] = array[j+1];
+                        array[j+1] = aux;
+                    }
                 }
-
-                // funcao swap
-                int aux = array[i];
-                array[i] = array[min_idx];
-                array[min_idx] = aux;
             }
-        //=====SELECTION SORT=====
-        
+        //=====BUBBLE SORT=====
+
         // imprime o vetor ordenado
         System.out.println("Vetor ordenado apos o sort:");
         System.out.println("*-------------------------------------------------*");
