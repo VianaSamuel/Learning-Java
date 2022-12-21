@@ -1,4 +1,10 @@
-package A02EstruturasDeDados.Flexivel;
+//==============//
+//PILHA FLEXIVEL//
+//==============//
+//METODOS: add -> remove -> get -> search -> show
+
+package A02EstruturasDeDados.Flexiveis.Lista;
+import A02EstruturasDeDados.Flexiveis.Node;
 
 public class Lista {
     // o first sera SEMPRE um NODE CABECA de valor IRRELEVANTE //
@@ -133,6 +139,8 @@ public class Lista {
                 }
             
                 size--;
+            } else {
+                System.out.println("Posicao invalida!");
             }
             return removed;
         }
@@ -186,6 +194,19 @@ public class Lista {
             return removed;
         }
     //=====REMOVE=====//
+    //=====GET=====//
+    public Node get(int pos){
+        // inicializa o percurso
+        Node i = first.getNext();
+        
+        // caminha ate a posicao desejada se o proximo node nao estiver vazio
+        for (int k = 0; k < pos; k++){
+            if (i.getNext() != null){
+                i = i.getNext();
+            }
+        }
+        return i;
+    }
     //=====SEARCH=====//
         public boolean search(int x){
             // inicializa o retorno
@@ -199,23 +220,9 @@ public class Lista {
                     i = last;
                 }
             }
-
             return result;
         }
     //=====SEARCH=====//
-    //=====GET=====//
-        public Node get(int pos){
-            // inicializa o percurso
-            Node i = first.getNext();
-
-            // caminha ate a posicao desejada se o proximo node nao estiver vazio
-            for (int k = 0; k < pos; k++){
-                if (i.getNext() != null) i = i.getNext();
-            }
-
-            // retorna o ultimo node
-            return i;
-        }
     //=====GET=====//
     //=====SHOW=====//
         public void show(){
@@ -227,6 +234,13 @@ public class Lista {
             }
 
             System.out.print("]");
+            System.out.println();
+        }
+
+        public void showMain(){
+            System.out.print("Lista: ");
+            this.show();
+            System.out.println("Tamanho: " + this.getSize());
             System.out.println();
         }
     //=====SHOW=====//

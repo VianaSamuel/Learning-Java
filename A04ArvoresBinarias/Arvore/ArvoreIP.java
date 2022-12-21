@@ -1,4 +1,5 @@
-package A04Arvores.Binarias;
+package A04ArvoresBinarias.Arvore;
+import A04ArvoresBinarias.Node;
 
 public class ArvoreIP extends Arvore {
     //=====INSERCAO POR PASSAGEM DE PAI=====//

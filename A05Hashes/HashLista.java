@@ -1,7 +1,7 @@
 //===================//
 //HASH LISTA FLEXIVEL//
 //===================//
-// ORDEM: hash -> add -> search -> remove
+// METODOS: hash -> add -> search -> remove
 
 package A05Hashes;
 

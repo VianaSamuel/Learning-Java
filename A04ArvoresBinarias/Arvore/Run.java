@@ -1,14 +1,14 @@
 //=======================//
 //INSERCAO POR REFERENCIA//
 //=======================//
-package A04Arvores.Binarias;
+package A04ArvoresBinarias.Arvore;
 import java.util.Random;
 
-public class RunArvore extends Arvore{
+public class Run {
     public static void main(String[] args) {
         int[] array = new int[12];
         Random random = new Random();
-        RunArvore tree = new RunArvore();
+        Arvore tree = new Arvore();
         
         for (int i: array){
             array[i] = random.nextInt(90) + 10;

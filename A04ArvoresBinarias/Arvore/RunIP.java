@@ -1,14 +1,14 @@
 //============================//
 //INSERCAO POR PASSAGEM DE PAI//
 //============================//
-package A04Arvores.Binarias;
+package A04ArvoresBinarias.Arvore;
 import java.util.Random;
 
-public class RunIP extends ArvoreIP{
+public class RunIP {
     public static void main(String[] args) {
         int[] array = new int[12];
         Random random = new Random();
-        RunIP tree = new RunIP();
+        ArvoreIP tree = new ArvoreIP();
         
         for (int i: array){
             array[i] = random.nextInt(90) + 10;

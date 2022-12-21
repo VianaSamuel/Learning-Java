@@ -1,11 +1,11 @@
 //================//
 //AVL (balanceada)//
 //================//
-package A04Arvores.Binarias;
+package A04ArvoresBinarias.ArvoreAVL;
 
-public class RunAVL extends ArvoreAVL {
+public class RunAVL {
     public static void main(String[] args) {
-        RunAVL tree = new RunAVL();
+        ArvoreAVL tree = new ArvoreAVL();
         int array[] = {4,35,10,13,3,30,15,12,7,40,20};
 
         for(int i: array){
@@ -16,5 +16,10 @@ public class RunAVL extends ArvoreAVL {
             tree.AVLOrder();
             System.out.println();
         }
+
+        tree.printTree();
+        tree.printPreOrder();
+        tree.printPostOrder();
+        tree.printInOrder();
     }
 }

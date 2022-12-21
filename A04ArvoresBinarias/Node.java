@@ -1,17 +1,17 @@
 //====//
 //NODE//
 //====//
-package A04Arvores.Binarias;
+package A04ArvoresBinarias;
 
-class Node{
-    int value;          // elemento
-    int level;          // altura
-    Node left, right;   // laterais
+public class Node{
+    public int value;          // elemento
+    public int level;          // altura
+    public Node left, right;   // filhos
 
-    Node(int value){
+    public Node(int value){
         this(value, 1, null, null);
     }
-    Node(int value, int level, Node left, Node right){
+    public Node(int value, int level, Node left, Node right){
         this.value = value;
         this.level = level;
         this.left = left;

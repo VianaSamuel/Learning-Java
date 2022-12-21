@@ -1,12 +1,14 @@
 //==========//
 //ARVORE AVL//
 //==========//
-//ORDEM: insercao -> remocao -> balanceamento -> rotacoes -> caminhamento
+//METODOS: insert -> remove -> balance -> rotations -> caminhamento
 
-package A04Arvores.Binarias;
+package A04ArvoresBinarias.ArvoreAVL;
+import A04ArvoresBinarias.Node;
+import A04ArvoresBinarias.Arvore.Arvore;
 
 public class ArvoreAVL extends Arvore {
-    //=====INSERCAO AVL=====//
+    //=====INSERT AVL=====//
         public void insertAVL(int value){
             root = insertAVL(value, root);
         }
@@ -18,12 +20,12 @@ public class ArvoreAVL extends Arvore {
             // retorna o node inserido BALANCEADO
             return balance(node);
         }
-    //=====INSERCAO AVL=====//
-    //=====REMOCAO AVL=====//
-        void removeAVL(int x){
+    //=====INSERT AVL=====//
+    //=====REMOVE AVL=====//
+        public void removeAVL(int x){
             root = removeAVL(x, root);
         }
-        Node removeAVL(int x, Node node){
+        public Node removeAVL(int x, Node node){
             if (node != null){
                 if (x < node.value) node.left = removeAVL(x, node.left);
                 else if (x > node.value) node.right = removeAVL(x, node.right);
@@ -37,7 +39,7 @@ public class ArvoreAVL extends Arvore {
             return balance(node);
         }
 
-        Node largestLeft(Node parent, Node son){
+        public Node largestLeft(Node parent, Node son){
             // se NODE DIREITO do filho estiver VAZIO
             if (son.right == null){
                 // ATUALIZA o valor do PAI
@@ -52,8 +54,8 @@ public class ArvoreAVL extends Arvore {
             // retorna o FILHO
             return son;
         }
-    //=====REMOCAO AVL=====//
-    //=====BALANCEAMENTO=====//
+    //=====REMOVE AVL=====//
+    //=====BALANCE=====//
     public Node balance(Node node){
         if (node != null){
             // fator de balanceamento
@@ -63,12 +65,12 @@ public class ArvoreAVL extends Arvore {
 
             // se desbalanceada pra DIREITA
             else if (factor == 2){
-                // define FILHO e seu FATOR
+                // define FILHO DIREITO e seu FATOR
                 Node son = node.right;
                 int factorSon = Node.getLevel(son.right) - Node.getLevel(son.left);
                 
-                // "JOELHO DIREITA"
-                // SE o filho da DIREITA tambem estiver DESBALANCEADO
+                // "JOELHO PRA DIREITA"
+                // SE o filho da DIREITA estiver DESBALANCEADO pra ESQUERDA
                 // rotaciona DIREITA
                 if (factorSon == -1) node.right = singleRight(son);
 
@@ -78,12 +80,12 @@ public class ArvoreAVL extends Arvore {
 
             // se desbalanceada pra ESQUERDA
             else if (factor == -2){
-                // define FILHO e seu FATOR
+                // define FILHO ESQUERDO e seu FATOR
                 Node son = node.left;
                 int factorSon = Node.getLevel(son.right) - Node.getLevel(son.left);
 
-                // "JOELHO ESQUERDA"
-                // SE o filho da ESQUERDA tambem estiver DESBALANCEADO
+                // "JOELHO PRA ESQUERDA"
+                // SE o filho da ESQUERDA estiver DESBALANCEADO pra DIREITA
                 // rotaciona ESQUERDA
                 if (factorSon == 1) node.left = singleLeft(son);
 
@@ -93,10 +95,10 @@ public class ArvoreAVL extends Arvore {
         }
         return node;
     }
-    //=====BALANCEAMENTO=====//
-    //=====ROTACOES=====//
+    //=====BALANCE=====//
+    //=====ROTATIONS=====//
         // -> rotacao ANTI-HORARIA, desbalanceamento POSITIVO (RETA & DIREITA)
-        Node singleLeft(Node grand){
+        public Node singleLeft(Node grand){
             System.out.println("---> Rotacionando ESQUERDA (" + grand.value + ")");
 
             //node PAI (DESBALANCEADO) a ser ESCALADO
@@ -118,7 +120,7 @@ public class ArvoreAVL extends Arvore {
         }
 
         // -> rotacao HORARIA, desbalanceamento NEGATIVO (RETA & ESQUERDA)
-        Node singleRight(Node grand){
+        public Node singleRight(Node grand){
             System.out.println("---> Rotacionando DIREITA (" + grand.value + ")");
 
             //node PAI (DESBALANCEADO) a ser ESCALADO
@@ -138,12 +140,12 @@ public class ArvoreAVL extends Arvore {
             //retorna o node BALANCEADO
             return father;
         }
-    //=====ROTACOES=====//
+    //=====ROTATIONS=====//
     //=====CAMINHAMENTO AVL=====//
-        void AVLOrder(){
+        public void AVLOrder(){
             AVLOrder(root);
         }
-        void AVLOrder(Node node){
+        public void AVLOrder(Node node){
             if (node != null){
                 System.out.println(node.value + " FATOR [" + (Node.getLevel(node.right) - Node.getLevel(node.left)) + "]");
                 AVLOrder(node.left);

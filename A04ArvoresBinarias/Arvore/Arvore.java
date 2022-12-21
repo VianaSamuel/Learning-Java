@@ -1,19 +1,19 @@
 //==============//
 //ARVORE BINARIA//
 //==============//
-//ORDEM: insercao -> pesquisa -> remocao -> caminhamentos -> prints
+//METODOS: insert -> search -> remove -> caminhamentos -> prints
 
-package A04Arvores.Binarias;
+package A04ArvoresBinarias.Arvore;
+import A04ArvoresBinarias.Node;
 
 public class Arvore {
-    Node root;  // node raiz
+    public Node root;  // node raiz
     
-    // inicializa a RAIZ como NULA
     public Arvore(){
         this.root = null;
     }
 
-    //=====INSERCAO POR REFERENCIA=====//
+    //=====INSERT=====//
         public void insert(int value){
             root = insert(value, root);
         }
@@ -26,16 +26,14 @@ public class Arvore {
             // senao, se o valor for MAIOR do que o PAI, caminha pra DIREITA
             else if (value > node.value) node.right = insert(value, node.right);
 
-            // retorna o node inserido
             return node;
         }
-    //=====INSERCAO POR REFERENCIA=====//
-    //=====PESQUISA=====//
-        boolean search(int x){
+    //=====INSERT=====//
+    //=====SEARCH=====//
+        public boolean search(int x){
             return search(x, root);
         }
-        boolean search(int x, Node node){
-            // inicializa o resultado
+        public boolean search(int x, Node node){
             boolean result = false;
 
             // se o NODE estiver VAZIO, retorna FALSE
@@ -48,15 +46,14 @@ public class Arvore {
             // senão, se o PROCURADO for MAIOR que o NODE, caminha pra DIREITA
             else if (x > node.value) result = search(x, node.right);
 
-            // retorna o resultado da pesquisa
             return result;
         }
-    //=====PESQUISA=====//
-    //=====REMOCAO=====//
-        void remove(int x){
+    //=====SEARCH=====//
+    //=====REMOVE=====//
+        public void remove(int x){
             root = remove(x, root);
         }
-        Node remove(int x, Node node){
+        public Node remove(int x, Node node){
             if (node != null) {
                 // se o PROCURADO for MENOR do que o NODE, caminha pra ESQUERDA
                 if (x < node.value) node.left = remove(x, node.left);
@@ -73,11 +70,10 @@ public class Arvore {
                 // se NENHUM estiver VAZIO, APONTA pro MAIOR ELEMENTO da ESQUERDA
                 else node.left = largestLeft(node, node.left);
             }
-            // retorna o node removido
             return node;
         }
 
-        Node largestLeft(Node parent, Node son){
+        public Node largestLeft(Node parent, Node son){
             // se NODE DIREITO do filho estiver VAZIO
             if (son.right == null){
                 // ATUALIZA o valor do PAI
@@ -92,44 +88,44 @@ public class Arvore {
             // retorna o FILHO
             return son;
         }
-    //=====REMOCAO=====//
+    //=====REMOVE=====//
     //=====CAMINHAMENTOS=====//
         //-----CENTRAL-----//
         // da ESQUERDA para a DIREITA, eh ORDENDADO
-        void inOrder(Node node){
+        public void inOrder(Node node){
             if (node != null){
                 inOrder(node.left);
                 System.out.print(node.value + " ");
                 inOrder(node.right);
             }
         }
-        void inOrder(){
+        public void inOrder(){
             inOrder(root);
         }
             
         //-----PRE-----//
         // primeiro os NODES (cima para baixo), depois as PONTAS
-        void preOrder(Node node){
+        public void preOrder(Node node){
             if (node != null){
                 System.out.print(node.value + " ");
                 preOrder(node.left);
                 preOrder(node.right);
             }
         }
-        void preOrder(){
+        public void preOrder(){
             preOrder(root);
         }
 
         //-----POS-----//
         // primeiro as PONTAS (baixo para cima), depois os NODES
-        void postOrder(Node node){
+        public void postOrder(Node node){
             if (node != null){
                 postOrder(node.left);
                 postOrder(node.right);
                 System.out.print(node.value + " ");
             }
         }
-        void postOrder(){
+        public void postOrder(){
             postOrder(root);
         }
     //=====CAMINHAMENTOS=====//
