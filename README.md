@@ -10,7 +10,7 @@ O intuito principal desse repositório é auxiliar novos estudantes da matéria 
 
 
 ---
-## **Conteúdo do repositório:**
+### **Conteúdo do repositório:**
 ---
 
  - Questões resolvidas para Iniciantes em Java:
@@ -40,4 +40,4 @@ O intuito principal desse repositório é auxiliar novos estudantes da matéria 
    - [Árvore AVL](./A04ArvoresBinarias/ArvoreAVL/)
 ---
 
-### Dedicado ao professor Walisson Carvalho.
+Dedicado ao professor Walisson Carvalho.
