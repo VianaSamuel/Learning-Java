@@ -38,6 +38,12 @@ O intuito principal desse repositório é auxiliar novos estudantes da matéria 
  - Árvores Binárias:
    - [Árvore Binária de Busca](./A04ArvoresBinarias/Arvore/)
    - [Árvore AVL](./A04ArvoresBinarias/ArvoreAVL/)
+   <br><br>
+
+- Tabelas Hash
+  - [Hash com Rehash](./A05TabelasHash/HashRehash.java)
+  - [Hash com Reserva](./A05TabelasHash/HashReserva.java)
+  - [Hash com Lista Flexível](./A05FuncoesHash/HashLista.java)
 ---
 
 Dedicado ao professor Walisson Carvalho.

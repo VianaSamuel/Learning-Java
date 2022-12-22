@@ -3,7 +3,7 @@
 //===================//
 // METODOS: hash -> add -> search -> remove
 
-package A05Hashes;
+package A05TabelasHash;
 
 public class HashLista {
     final int EMPTY = -1;       // flag de index vazio

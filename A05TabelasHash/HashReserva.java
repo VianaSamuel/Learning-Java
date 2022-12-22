@@ -3,7 +3,7 @@
 //============//
 // METODOS: hash -> insert -> search -> remove
 
-package A05Hashes;
+package A05TabelasHash;
 
 public class HashReserva {
     final int EMPTY = -1;       // flag de index vazio

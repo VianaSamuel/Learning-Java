@@ -1,4 +1,4 @@
-package A05Hashes;
+package A05TabelasHash;
 
 public class Lista {
     // o first sera SEMPRE um NODE CABECA de valor IRRELEVANTE //
