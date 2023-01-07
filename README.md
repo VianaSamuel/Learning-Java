@@ -1,6 +1,6 @@
 # Java & AED's
 
-Neste repositório encontram-se presentes os meus estudos da linguagem Java e da teoria de Algoritmos e Estrutura de Dados.
+Neste repositório encontram-se presentes os meus estudos da linguagem Java e da teoria de Algoritmos e Estruturas de Dados.
 
 Todos os códigos aqui disponibilizados são de minha autoria e ricos em comentários didáticos, que me proporcionaram um melhor entendimento acerca do conteúdo.
 
