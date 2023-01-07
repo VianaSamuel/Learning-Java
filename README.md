@@ -9,7 +9,7 @@ O intuito principal desse repositório é auxiliar novos estudantes da matéria 
 <br>
 
 
-### **Conteúdo do repositório:**
+### <ins>**Conteúdo do repositório:**</ins>
 
  - Questões resolvidas para Iniciantes em Java:
     - [Exercícios Avulsos](./A99Avulsos/)
