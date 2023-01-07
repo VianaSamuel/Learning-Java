@@ -9,9 +9,7 @@ O intuito principal desse repositório é auxiliar novos estudantes da matéria 
 <br>
 
 
----
 ### **Conteúdo do repositório:**
----
 
  - Questões resolvidas para Iniciantes em Java:
     - [Exercícios Avulsos](./A99Avulsos/)
@@ -44,6 +42,5 @@ O intuito principal desse repositório é auxiliar novos estudantes da matéria 
   - [Hash com Rehash](./A05TabelasHash/HashRehash.java)
   - [Hash com Reserva](./A05TabelasHash/HashReserva.java)
   - [Hash com Lista Flexível](./A05FuncoesHash/HashLista.java)
----
 
 Dedicado ao professor Walisson Carvalho.
