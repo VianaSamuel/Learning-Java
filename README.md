@@ -42,5 +42,6 @@ O intuito principal desse repositório é auxiliar novos estudantes da matéria 
   - [Hash com Rehash](./A05TabelasHash/HashRehash.java)
   - [Hash com Reserva](./A05TabelasHash/HashReserva.java)
   - [Hash com Lista Flexível](./A05FuncoesHash/HashLista.java)
+  <br><br>
 
 Dedicado ao professor Walisson Carvalho.
