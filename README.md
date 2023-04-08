@@ -39,9 +39,9 @@ O intuito principal desse repositório é auxiliar novos estudantes da matéria 
    <br><br>
 
 - Tabelas Hash
-  - [Hash com Rehash](./TabelasHash/HashRehash.java)
-  - [Hash com Reserva](./TabelasHash/HashReserva.java)
-  - [Hash com Lista Flexível](./FuncoesHash/HashLista.java)
+  - [Hash com Rehash](./Hashing/HashRehash.java)
+  - [Hash com Reserva](./Hashing/HashReserva.java)
+  - [Hash com Lista Flexível](./Hashing/HashLista.java)
   <br><br>
 
 Dedicado ao professor Walisson Carvalho.
