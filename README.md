@@ -11,7 +11,8 @@ O intuito principal desse repositório é auxiliar novos estudantes da matéria 
 
 ### <ins>**Conteúdo do repositório:**</ins>
 
- - [Questões resolvidas para Iniciantes em Java:](./JavaForNoobs/)
+ - Questões resolvidas para Iniciantes em Java:
+    - [Java for Noobs](./JavaForNoobs/)
     <br><br>
  - Algoritmos de Pesquisa:
     - [Pesquisa Binária](./Pesquisa/Binaria.java)
