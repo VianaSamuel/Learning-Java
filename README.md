@@ -43,5 +43,3 @@ O intuito principal desse repositório é auxiliar novos estudantes da matéria 
   - [Hash com Reserva](./Hashing/HashReserva.java)
   - [Hash com Lista Flexível](./Hashing/HashLista.java)
   <br><br>
-
-Dedicado ao professor Walisson Carvalho.
